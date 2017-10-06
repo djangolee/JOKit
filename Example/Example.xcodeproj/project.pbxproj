@@ -11,17 +11,40 @@
 		3E0E240E1F86916100157355 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E24031F8690C400157355 /* ViewController.swift */; };
 		3E0E240F1F86916100157355 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E24081F8690C400157355 /* NavigationController.swift */; };
 		3E0E24101F86917000157355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0E24041F8690C400157355 /* Assets.xcassets */; };
+		3EBE6FEB1F87751E00E1B4A3 /* JoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBE6FEA1F87751400E1B4A3 /* JoKit.framework */; };
+		3EBE6FEC1F87751E00E1B4A3 /* JoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBE6FEA1F87751400E1B4A3 /* JoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3ED1006C1F86921F0065E025 /* PBXContainerItemProxy */ = {
+		3EBE6FE91F87751400E1B4A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3ED100681F86921F0065E025 /* JoUIKit.xcodeproj */;
+			containerPortal = 3EBE6FE51F87751400E1B4A3 /* JoKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3E0E241C1F8691AD00157355;
-			remoteInfo = JoUIKit;
+			remoteGlobalIDString = 3EBE6FD51F87748800E1B4A3;
+			remoteInfo = JoKit;
+		};
+		3EBE6FED1F87751E00E1B4A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EBE6FE51F87751400E1B4A3 /* JoKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EBE6FD41F87748800E1B4A3;
+			remoteInfo = JoKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3ED1007E1F86950E0065E025 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3EBE6FEC1F87751E00E1B4A3 /* JoKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3E0E23E21F86902D00157355 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,7 +54,7 @@
 		3E0E24071F8690C400157355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E0E24081F8690C400157355 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		3E0E24091F8690C400157355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3ED100681F86921F0065E025 /* JoUIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JoUIKit.xcodeproj; path = ../JoUIKit.xcodeproj; sourceTree = "<group>"; };
+		3EBE6FE51F87751400E1B4A3 /* JoKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JoKit.xcodeproj; path = ../JoKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EBE6FEB1F87751E00E1B4A3 /* JoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,9 +72,10 @@
 		3E0E23D91F86902D00157355 = {
 			isa = PBXGroup;
 			children = (
-				3ED100681F86921F0065E025 /* JoUIKit.xcodeproj */,
+				3EBE6FE51F87751400E1B4A3 /* JoKit.xcodeproj */,
 				3E0E24021F8690C400157355 /* Source */,
 				3E0E23E31F86902D00157355 /* Products */,
+				3ED100781F86950A0065E025 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,10 +90,10 @@
 		3E0E24021F8690C400157355 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				3E0E240C1F8690F100157355 /* Supporting Files */,
 				3E0E24071F8690C400157355 /* AppDelegate.swift */,
 				3E0E24031F8690C400157355 /* ViewController.swift */,
 				3E0E24081F8690C400157355 /* NavigationController.swift */,
+				3E0E240C1F8690F100157355 /* Supporting Files */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -83,12 +108,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3ED100691F86921F0065E025 /* Products */ = {
+		3EBE6FE61F87751400E1B4A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3ED1006D1F86921F0065E025 /* JoUIKit.framework */,
+				3EBE6FEA1F87751400E1B4A3 /* JoKit.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3ED100781F86950A0065E025 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,10 +133,12 @@
 				3E0E23DE1F86902D00157355 /* Sources */,
 				3E0E23DF1F86902D00157355 /* Frameworks */,
 				3E0E23E01F86902D00157355 /* Resources */,
+				3ED1007E1F86950E0065E025 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3EBE6FEE1F87751E00E1B4A3 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -140,8 +174,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3ED100691F86921F0065E025 /* Products */;
-					ProjectRef = 3ED100681F86921F0065E025 /* JoUIKit.xcodeproj */;
+					ProductGroup = 3EBE6FE61F87751400E1B4A3 /* Products */;
+					ProjectRef = 3EBE6FE51F87751400E1B4A3 /* JoKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -152,11 +186,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3ED1006D1F86921F0065E025 /* JoUIKit.framework */ = {
+		3EBE6FEA1F87751400E1B4A3 /* JoKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = JoUIKit.framework;
-			remoteRef = 3ED1006C1F86921F0065E025 /* PBXContainerItemProxy */;
+			path = JoKit.framework;
+			remoteRef = 3EBE6FE91F87751400E1B4A3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -184,6 +218,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3EBE6FEE1F87751E00E1B4A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JoKit;
+			targetProxy = 3EBE6FED1F87751E00E1B4A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3E0E24051F8690C400157355 /* LaunchScreen.storyboard */ = {
@@ -307,13 +349,14 @@
 		3E0E23F51F86902D00157355 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 673AB3A2L9;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.django.jouikitexample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.django.jokitexample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -323,13 +366,14 @@
 		3E0E23F61F86902D00157355 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 673AB3A2L9;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.django.jouikitexample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.django.jokitexample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

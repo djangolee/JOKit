@@ -1,1 +1,1 @@
-# JoUIKit
+# JoKit

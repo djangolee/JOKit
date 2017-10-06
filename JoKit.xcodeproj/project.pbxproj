@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3ED100711F8692460065E025 /* JoUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ED1006F1F86923A0065E025 /* JoUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EBE6FE31F8774E600E1B4A3 /* JoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBE6FE11F8774C200E1B4A3 /* JoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EBE6FF01F87754200E1B4A3 /* JoKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6FEF1F87754200E1B4A3 /* JoKit.swift */; };
+		3EBE6FF41F87769E00E1B4A3 /* UIView+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6FF31F87769E00E1B4A3 /* UIView+Compatible.swift */; };
+		3EBE6FF61F87773500E1B4A3 /* UIViewController+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6FF51F87773500E1B4A3 /* UIViewController+Compatible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3E0E241C1F8691AD00157355 /* JoUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JoUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3ED1006F1F86923A0065E025 /* JoUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoUIKit.h; sourceTree = "<group>"; };
-		3ED100701F86923A0065E025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EBE6FD51F87748800E1B4A3 /* JoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EBE6FE11F8774C200E1B4A3 /* JoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoKit.h; sourceTree = "<group>"; };
+		3EBE6FE21F8774C200E1B4A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EBE6FEF1F87754200E1B4A3 /* JoKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoKit.swift; sourceTree = "<group>"; };
+		3EBE6FF31F87769E00E1B4A3 /* UIView+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Compatible.swift"; sourceTree = "<group>"; };
+		3EBE6FF51F87773500E1B4A3 /* UIViewController+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Compatible.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3E0E24181F8691AD00157355 /* Frameworks */ = {
+		3EBE6FD11F87748800E1B4A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -27,97 +33,117 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3E0E24121F8691AD00157355 = {
+		3EBE6FCB1F87748800E1B4A3 = {
 			isa = PBXGroup;
 			children = (
-				3ED1006E1F86923A0065E025 /* Source */,
-				3E0E241D1F8691AD00157355 /* Products */,
+				3EBE6FE01F8774C200E1B4A3 /* Source */,
+				3EBE6FD61F87748800E1B4A3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3E0E241D1F8691AD00157355 /* Products */ = {
+		3EBE6FD61F87748800E1B4A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3E0E241C1F8691AD00157355 /* JoUIKit.framework */,
+				3EBE6FD51F87748800E1B4A3 /* JoKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3ED1006E1F86923A0065E025 /* Source */ = {
+		3EBE6FE01F8774C200E1B4A3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				3ED1006F1F86923A0065E025 /* JoUIKit.h */,
-				3ED100701F86923A0065E025 /* Info.plist */,
+				3EBE6FF21F87767E00E1B4A3 /* UIKit */,
+				3EBE6FEF1F87754200E1B4A3 /* JoKit.swift */,
+				3EBE6FF11F87754B00E1B4A3 /* Supporting Files */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		3EBE6FF11F87754B00E1B4A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EBE6FE11F8774C200E1B4A3 /* JoKit.h */,
+				3EBE6FE21F8774C200E1B4A3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3EBE6FF21F87767E00E1B4A3 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				3EBE6FF31F87769E00E1B4A3 /* UIView+Compatible.swift */,
+				3EBE6FF51F87773500E1B4A3 /* UIViewController+Compatible.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3E0E24191F8691AD00157355 /* Headers */ = {
+		3EBE6FD21F87748800E1B4A3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ED100711F8692460065E025 /* JoUIKit.h in Headers */,
+				3EBE6FE31F8774E600E1B4A3 /* JoKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3E0E241B1F8691AD00157355 /* JoUIKit */ = {
+		3EBE6FD41F87748800E1B4A3 /* JoKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3E0E24241F8691AD00157355 /* Build configuration list for PBXNativeTarget "JoUIKit" */;
+			buildConfigurationList = 3EBE6FDD1F87748800E1B4A3 /* Build configuration list for PBXNativeTarget "JoKit" */;
 			buildPhases = (
-				3E0E24171F8691AD00157355 /* Sources */,
-				3E0E24181F8691AD00157355 /* Frameworks */,
-				3E0E24191F8691AD00157355 /* Headers */,
-				3E0E241A1F8691AD00157355 /* Resources */,
+				3EBE6FD01F87748800E1B4A3 /* Sources */,
+				3EBE6FD11F87748800E1B4A3 /* Frameworks */,
+				3EBE6FD21F87748800E1B4A3 /* Headers */,
+				3EBE6FD31F87748800E1B4A3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = JoUIKit;
-			productName = JoUIKit;
-			productReference = 3E0E241C1F8691AD00157355 /* JoUIKit.framework */;
+			name = JoKit;
+			productName = JoKit;
+			productReference = 3EBE6FD51F87748800E1B4A3 /* JoKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3E0E24131F8691AD00157355 /* Project object */ = {
+		3EBE6FCC1F87748800E1B4A3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Django Lee";
 				TargetAttributes = {
-					3E0E241B1F8691AD00157355 = {
+					3EBE6FD41F87748800E1B4A3 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 3E0E24161F8691AD00157355 /* Build configuration list for PBXProject "JoUIKit" */;
+			buildConfigurationList = 3EBE6FCF1F87748800E1B4A3 /* Build configuration list for PBXProject "JoKit" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 3E0E24121F8691AD00157355;
-			productRefGroup = 3E0E241D1F8691AD00157355 /* Products */;
+			mainGroup = 3EBE6FCB1F87748800E1B4A3;
+			productRefGroup = 3EBE6FD61F87748800E1B4A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3E0E241B1F8691AD00157355 /* JoUIKit */,
+				3EBE6FD41F87748800E1B4A3 /* JoKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3E0E241A1F8691AD00157355 /* Resources */ = {
+		3EBE6FD31F87748800E1B4A3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -127,17 +153,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3E0E24171F8691AD00157355 /* Sources */ = {
+		3EBE6FD01F87748800E1B4A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EBE6FF41F87769E00E1B4A3 /* UIView+Compatible.swift in Sources */,
+				3EBE6FF61F87773500E1B4A3 /* UIViewController+Compatible.swift in Sources */,
+				3EBE6FF01F87754200E1B4A3 /* JoKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		3E0E24221F8691AD00157355 /* Debug */ = {
+		3EBE6FDB1F87748800E1B4A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -197,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		3E0E24231F8691AD00157355 /* Release */ = {
+		3EBE6FDC1F87748800E1B4A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -250,9 +279,10 @@
 			};
 			name = Release;
 		};
-		3E0E24251F8691AD00157355 /* Debug */ = {
+		3EBE6FDE1F87748800E1B4A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -264,17 +294,19 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.django.JoUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.django.JoKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		3E0E24261F8691AD00157355 /* Release */ = {
+		3EBE6FDF1F87748800E1B4A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -286,7 +318,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.django.JoUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.django.JoKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -297,25 +329,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3E0E24161F8691AD00157355 /* Build configuration list for PBXProject "JoUIKit" */ = {
+		3EBE6FCF1F87748800E1B4A3 /* Build configuration list for PBXProject "JoKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E0E24221F8691AD00157355 /* Debug */,
-				3E0E24231F8691AD00157355 /* Release */,
+				3EBE6FDB1F87748800E1B4A3 /* Debug */,
+				3EBE6FDC1F87748800E1B4A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E0E24241F8691AD00157355 /* Build configuration list for PBXNativeTarget "JoUIKit" */ = {
+		3EBE6FDD1F87748800E1B4A3 /* Build configuration list for PBXNativeTarget "JoKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E0E24251F8691AD00157355 /* Debug */,
-				3E0E24261F8691AD00157355 /* Release */,
+				3EBE6FDE1F87748800E1B4A3 /* Debug */,
+				3EBE6FDF1F87748800E1B4A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3E0E24131F8691AD00157355 /* Project object */;
+	rootObject = 3EBE6FCC1F87748800E1B4A3 /* Project object */;
 }

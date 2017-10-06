@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JoKit
 
 class ViewController: UIViewController {
 
@@ -14,14 +15,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         title = "JoUIKit"
-        
+        print(view.jo.viewController)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-
-
 }
+
 
