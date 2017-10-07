@@ -11,11 +11,29 @@ import JoKit
 
 class ViewController: UIViewController {
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        print(#function)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "JoUIKit"
-        print(view.jo.viewController)
+        
+        for _ in 0...23 {
+            var vc = ViewController()
+            print(vc)
+//            print(token.pointee)
+//            DispatchQueue.main.jo.once(token: token) {
+//                print(#function)
+//            }
+        }
+        
     }
 }
 

@@ -6,8 +6,6 @@
 //  Copyright © 2017 Django Lee. All rights reserved.
 //
 
-import Foundation
-
 public protocol JoSupportingLoadView: class {
 
     func jo_setupSubviews()
