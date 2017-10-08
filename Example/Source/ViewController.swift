@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import JoKit
+import JoUIKit
 
 class ViewController: UIViewController {
 

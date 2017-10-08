@@ -11,25 +11,25 @@
 		3E0E240E1F86916100157355 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E24031F8690C400157355 /* ViewController.swift */; };
 		3E0E240F1F86916100157355 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E24081F8690C400157355 /* NavigationController.swift */; };
 		3E0E24101F86917000157355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0E24041F8690C400157355 /* Assets.xcassets */; };
-		3EBE6FEB1F87751E00E1B4A3 /* JoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBE6FEA1F87751400E1B4A3 /* JoKit.framework */; };
-		3EBE6FEC1F87751E00E1B4A3 /* JoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBE6FEA1F87751400E1B4A3 /* JoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3EBE7ECF1F88CC4D00ED4470 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE7ECE1F88CC4D00ED4470 /* Window.swift */; };
+		3EC80BDD1F8A0B2C0000C812 /* JoUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC80BDC1F8A0B1E0000C812 /* JoUIKit.framework */; };
+		3EC80BDE1F8A0B2C0000C812 /* JoUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC80BDC1F8A0B1E0000C812 /* JoUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3EBE6FE91F87751400E1B4A3 /* PBXContainerItemProxy */ = {
+		3EC80BDB1F8A0B1E0000C812 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3EBE6FE51F87751400E1B4A3 /* JoKit.xcodeproj */;
+			containerPortal = 3EC80BD71F8A0B1E0000C812 /* JoUIKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3EBE6FD51F87748800E1B4A3;
-			remoteInfo = JoKit;
+			remoteGlobalIDString = 3EC80BB41F8A0A0A0000C812;
+			remoteInfo = JoUIKit;
 		};
-		3EBE6FED1F87751E00E1B4A3 /* PBXContainerItemProxy */ = {
+		3EC80BDF1F8A0B2C0000C812 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3EBE6FE51F87751400E1B4A3 /* JoKit.xcodeproj */;
+			containerPortal = 3EC80BD71F8A0B1E0000C812 /* JoUIKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 3EBE6FD41F87748800E1B4A3;
-			remoteInfo = JoKit;
+			remoteGlobalIDString = 3EC80BB31F8A0A0A0000C812;
+			remoteInfo = JoUIKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -40,7 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3EBE6FEC1F87751E00E1B4A3 /* JoKit.framework in Embed Frameworks */,
+				3EC80BDE1F8A0B2C0000C812 /* JoUIKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,8 +55,8 @@
 		3E0E24071F8690C400157355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E0E24081F8690C400157355 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		3E0E24091F8690C400157355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3EBE6FE51F87751400E1B4A3 /* JoKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JoKit.xcodeproj; path = ../JoKit.xcodeproj; sourceTree = "<group>"; };
 		3EBE7ECE1F88CC4D00ED4470 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		3EC80BD71F8A0B1E0000C812 /* JoUIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JoUIKit.xcodeproj; path = ../JoUIKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EBE6FEB1F87751E00E1B4A3 /* JoKit.framework in Frameworks */,
+				3EC80BDD1F8A0B2C0000C812 /* JoUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,10 +74,10 @@
 		3E0E23D91F86902D00157355 = {
 			isa = PBXGroup;
 			children = (
-				3EBE6FE51F87751400E1B4A3 /* JoKit.xcodeproj */,
 				3E0E24021F8690C400157355 /* Source */,
 				3E0E23E31F86902D00157355 /* Products */,
 				3ED100781F86950A0065E025 /* Frameworks */,
+				3EC80BD71F8A0B1E0000C812 /* JoUIKit.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,10 +111,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3EBE6FE61F87751400E1B4A3 /* Products */ = {
+		3EC80BD81F8A0B1E0000C812 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EBE6FEA1F87751400E1B4A3 /* JoKit.framework */,
+				3EC80BDC1F8A0B1E0000C812 /* JoUIKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				3EBE6FEE1F87751E00E1B4A3 /* PBXTargetDependency */,
+				3EC80BE01F8A0B2C0000C812 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -177,8 +177,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3EBE6FE61F87751400E1B4A3 /* Products */;
-					ProjectRef = 3EBE6FE51F87751400E1B4A3 /* JoKit.xcodeproj */;
+					ProductGroup = 3EC80BD81F8A0B1E0000C812 /* Products */;
+					ProjectRef = 3EC80BD71F8A0B1E0000C812 /* JoUIKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -189,11 +189,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3EBE6FEA1F87751400E1B4A3 /* JoKit.framework */ = {
+		3EC80BDC1F8A0B1E0000C812 /* JoUIKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = JoKit.framework;
-			remoteRef = 3EBE6FE91F87751400E1B4A3 /* PBXContainerItemProxy */;
+			path = JoUIKit.framework;
+			remoteRef = 3EC80BDB1F8A0B1E0000C812 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -224,10 +224,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3EBE6FEE1F87751E00E1B4A3 /* PBXTargetDependency */ = {
+		3EC80BE01F8A0B2C0000C812 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = JoKit;
-			targetProxy = 3EBE6FED1F87751E00E1B4A3 /* PBXContainerItemProxy */;
+			name = JoUIKit;
+			targetProxy = 3EC80BDF1F8A0B2C0000C812 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -360,7 +360,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.django.jokitexample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.django.jouikitexample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -377,7 +377,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.django.jokitexample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.django.jouikitexample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
