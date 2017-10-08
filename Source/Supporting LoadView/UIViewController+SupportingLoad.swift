@@ -18,7 +18,7 @@ extension UIViewController {
         guard Thread.main == Thread.current else { return }
         
         let initializationCompletion = objc_getAssociatedObject(self, &UIViewController.supportingLoadViewToken) as? Bool
-        guard view.window != nil, initializationCompletion == nil else { return }
+        guard isViewLoaded, initializationCompletion == nil else { return }
         objc_setAssociatedObject(self, &UIViewController.supportingLoadViewToken, true, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         
         self.jo_prepareLoadView()
