@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3EBE6FD41F87748800E1B4A3"
-               BuildableName = "JoKit.framework"
-               BlueprintName = "JoKit"
-               ReferencedContainer = "container:JoKit.xcodeproj">
+               BlueprintIdentifier = "3EC80BB31F8A0A0A0000C812"
+               BuildableName = "JoUIKit.framework"
+               BlueprintName = "JoUIKit"
+               ReferencedContainer = "container:JoUIKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,10 +47,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3EBE6FD41F87748800E1B4A3"
-            BuildableName = "JoKit.framework"
-            BlueprintName = "JoKit"
-            ReferencedContainer = "container:JoKit.xcodeproj">
+            BlueprintIdentifier = "3EC80BB31F8A0A0A0000C812"
+            BuildableName = "JoUIKit.framework"
+            BlueprintName = "JoUIKit"
+            ReferencedContainer = "container:JoUIKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,10 +65,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3EBE6FD41F87748800E1B4A3"
-            BuildableName = "JoKit.framework"
-            BlueprintName = "JoKit"
-            ReferencedContainer = "container:JoKit.xcodeproj">
+            BlueprintIdentifier = "3EC80BB31F8A0A0A0000C812"
+            BuildableName = "JoUIKit.framework"
+            BlueprintName = "JoUIKit"
+            ReferencedContainer = "container:JoUIKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

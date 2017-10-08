@@ -4,8 +4,8 @@ env:
   global:
   - LC_CTYPE=en_US.UTF-8
   - LANG=en_US.UTF-8
-  - WORKSPACE=JoKit.xcworkspace
-  - IOS_FRAMEWORK_SCHEME="JoKit"
+  - WORKSPACE=JoUIKit.xcworkspace
+  - IOS_FRAMEWORK_SCHEME="JoUIKit"
   - EXAMPLE_SCHEME="Example"
   matrix:
   - DESTINATION="OS=9.0,name=iPhone 6"     SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES" BUILD_EXAMPLE="YES" POD_LINT="NO"
