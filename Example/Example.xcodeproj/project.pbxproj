@@ -13,6 +13,7 @@
 		3E0E24101F86917000157355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0E24041F8690C400157355 /* Assets.xcassets */; };
 		3EBE6FEB1F87751E00E1B4A3 /* JoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBE6FEA1F87751400E1B4A3 /* JoKit.framework */; };
 		3EBE6FEC1F87751E00E1B4A3 /* JoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBE6FEA1F87751400E1B4A3 /* JoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3EBE7ECF1F88CC4D00ED4470 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE7ECE1F88CC4D00ED4470 /* Window.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3E0E24081F8690C400157355 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		3E0E24091F8690C400157355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EBE6FE51F87751400E1B4A3 /* JoKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JoKit.xcodeproj; path = ../JoKit.xcodeproj; sourceTree = "<group>"; };
+		3EBE7ECE1F88CC4D00ED4470 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		3E0E24021F8690C400157355 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3EBE7ECE1F88CC4D00ED4470 /* Window.swift */,
 				3E0E24071F8690C400157355 /* AppDelegate.swift */,
 				3E0E24031F8690C400157355 /* ViewController.swift */,
 				3E0E24081F8690C400157355 /* NavigationController.swift */,
@@ -214,6 +217,7 @@
 				3E0E240E1F86916100157355 /* ViewController.swift in Sources */,
 				3E0E240F1F86916100157355 /* NavigationController.swift in Sources */,
 				3E0E240D1F86916100157355 /* AppDelegate.swift in Sources */,
+				3EBE7ECF1F88CC4D00ED4470 /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

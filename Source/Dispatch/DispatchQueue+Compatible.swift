@@ -8,20 +8,19 @@
 
 import Dispatch
 
-fileprivate var onceTracker = [UnsafeRawPointer]()
+fileprivate var onceTracker = [Int]()
 
 extension JoUIKit where Base: DispatchQueue {
     
-    public func once(token: UnsafeRawPointer, execute work: @escaping @convention(block) () -> Swift.Void) {
+    public func once(token: UnsafePointer<Int>, execute work: @escaping @convention(block) () -> Swift.Void) {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
-        if onceTracker.contains(token) {
-            return
+        
+        if !onceTracker.contains(token.hashValue) {
+            onceTracker.append(token.hashValue)
+            work()
         }
-        onceTracker.append(token)
-        work()
     }
-    
-    
+
 }
 

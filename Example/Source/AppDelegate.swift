@@ -14,14 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UIResponder.methodExchangeImplementations()
         
         let rootViewController = ViewController()
         let navigationController = NavigationController(rootViewController: rootViewController)
-        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = Window(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navigationController
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
-        
+        self.window?.didMoveToWindow()
         return true
     }
 
@@ -47,6 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+    }
 
 }
 

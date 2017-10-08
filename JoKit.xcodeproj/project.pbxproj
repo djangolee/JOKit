@@ -12,6 +12,9 @@
 		3EBE6FF41F87769E00E1B4A3 /* UIView+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6FF31F87769E00E1B4A3 /* UIView+Compatible.swift */; };
 		3EBE6FF61F87773500E1B4A3 /* UIViewController+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6FF51F87773500E1B4A3 /* UIViewController+Compatible.swift */; };
 		3EBE6FFD1F877B0E00E1B4A3 /* DispatchQueue+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6FFC1F877B0E00E1B4A3 /* DispatchQueue+Compatible.swift */; };
+		3EBE7EA91F889C2F00ED4470 /* UIView+SupportingLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6FF81F8779AD00E1B4A3 /* UIView+SupportingLoad.swift */; };
+		3EBE7EAA1F889C2F00ED4470 /* UIViewController+SupportingLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE6FF91F8779AD00E1B4A3 /* UIViewController+SupportingLoad.swift */; };
+		3EBE7ED11F88D03400ED4470 /* UIResponder+SupportingLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE7ED01F88D03400ED4470 /* UIResponder+SupportingLoad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +26,8 @@
 		3EBE6FF51F87773500E1B4A3 /* UIViewController+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Compatible.swift"; sourceTree = "<group>"; };
 		3EBE6FF81F8779AD00E1B4A3 /* UIView+SupportingLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SupportingLoad.swift"; sourceTree = "<group>"; };
 		3EBE6FF91F8779AD00E1B4A3 /* UIViewController+SupportingLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SupportingLoad.swift"; sourceTree = "<group>"; };
-		3EBE6FFA1F8779AD00E1B4A3 /* SupportingLoadViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingLoadViewProtocol.swift; sourceTree = "<group>"; };
 		3EBE6FFC1F877B0E00E1B4A3 /* DispatchQueue+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Compatible.swift"; sourceTree = "<group>"; };
+		3EBE7ED01F88D03400ED4470 /* UIResponder+SupportingLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+SupportingLoad.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +60,10 @@
 		3EBE6FE01F8774C200E1B4A3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3EBE6FEF1F87754200E1B4A3 /* JoKit.swift */,
 				3EBE6FFB1F877AF900E1B4A3 /* Dispatch */,
 				3EBE6FF71F8779AD00E1B4A3 /* Supporting LoadView */,
 				3EBE6FF21F87767E00E1B4A3 /* UIKit */,
-				3EBE6FEF1F87754200E1B4A3 /* JoKit.swift */,
 				3EBE6FF11F87754B00E1B4A3 /* Supporting Files */,
 			);
 			path = Source;
@@ -87,9 +90,9 @@
 		3EBE6FF71F8779AD00E1B4A3 /* Supporting LoadView */ = {
 			isa = PBXGroup;
 			children = (
+				3EBE7ED01F88D03400ED4470 /* UIResponder+SupportingLoad.swift */,
 				3EBE6FF81F8779AD00E1B4A3 /* UIView+SupportingLoad.swift */,
 				3EBE6FF91F8779AD00E1B4A3 /* UIViewController+SupportingLoad.swift */,
-				3EBE6FFA1F8779AD00E1B4A3 /* SupportingLoadViewProtocol.swift */,
 			);
 			path = "Supporting LoadView";
 			sourceTree = "<group>";
@@ -183,6 +186,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EBE6FF41F87769E00E1B4A3 /* UIView+Compatible.swift in Sources */,
+				3EBE7ED11F88D03400ED4470 /* UIResponder+SupportingLoad.swift in Sources */,
+				3EBE7EAA1F889C2F00ED4470 /* UIViewController+SupportingLoad.swift in Sources */,
+				3EBE7EA91F889C2F00ED4470 /* UIView+SupportingLoad.swift in Sources */,
 				3EBE6FF61F87773500E1B4A3 /* UIViewController+Compatible.swift in Sources */,
 				3EBE6FF01F87754200E1B4A3 /* JoKit.swift in Sources */,
 				3EBE6FFD1F877B0E00E1B4A3 /* DispatchQueue+Compatible.swift in Sources */,
