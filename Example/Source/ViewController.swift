@@ -15,6 +15,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         title = "JoUIKit"
         
+        print(view.jo.viewController as Any)
+        print(view.jo.viewControllers as Any)
+        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             let joView = JoSubView()
             joView.didMoveToWindow()

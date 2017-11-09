@@ -21,4 +21,18 @@ extension JoUIKit where Base: UIView {
         }
     }
     
+    public var viewControllers: [UIViewController]? {
+        get {
+            var viewControllers = [UIViewController]()
+            var next = self.base.next
+            while next != nil {
+                if let viewController = next as? UIViewController {
+                    viewControllers.append(viewController)
+                }
+                next = next?.next
+            }
+            return viewControllers.count <= 0 ? nil : viewControllers
+        }
+    }
+    
 }
