@@ -13,6 +13,10 @@ public struct JoUIKit<Base> {
     public init(_ base: Base) {
         self.base = base
     }
+    
+    public static func initializeJoUIKit() {
+        UIResponder.methodExchangeImplementations()
+    }
 }
 
 public protocol JoUIKitCompatible {

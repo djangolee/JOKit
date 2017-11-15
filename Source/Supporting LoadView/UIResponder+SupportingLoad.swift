@@ -10,20 +10,24 @@ import UIKit
 
 extension UIResponder {
     
-    public class func methodExchangeImplementations() {
+    private static var onceToken: Int = 0
+    
+    internal class func methodExchangeImplementations() {
         
-        if let oldMethod = class_getInstanceMethod(UIViewController.self, #selector(UIViewController.viewDidLoad)),
-            let newMethod = class_getInstanceMethod(UIViewController.self, #selector(UIViewController.jo_supportingLoadView)) {
+        DispatchQueue.main.jo.once(token: &onceToken) {
             
-            method_exchangeImplementations(newMethod, oldMethod)
-        }
-        
-        if let oldMethod = class_getInstanceMethod(UIView.self, #selector(UIView.didMoveToWindow)),
-            let newMethod = class_getInstanceMethod(UIView.self, #selector(UIView.jo_supportingLoadView)) {
+            if let oldMethod = class_getInstanceMethod(UIViewController.self, #selector(UIViewController.viewDidLoad)),
+                let newMethod = class_getInstanceMethod(UIViewController.self, #selector(UIViewController.jo_supportingLoadView)) {
+                
+                method_exchangeImplementations(newMethod, oldMethod)
+            }
             
-            method_exchangeImplementations(newMethod, oldMethod)
+            if let oldMethod = class_getInstanceMethod(UIView.self, #selector(UIView.didMoveToWindow)),
+                let newMethod = class_getInstanceMethod(UIView.self, #selector(UIView.jo_supportingLoadView)) {
+                
+                method_exchangeImplementations(newMethod, oldMethod)
+            }
         }
-
     }
     
     @objc internal func jo_supportingLoadView() {
