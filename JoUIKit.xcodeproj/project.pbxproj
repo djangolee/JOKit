@@ -17,6 +17,7 @@
 		3EC80BD61F8A0AA30000C812 /* JoUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC80BC91F8A0A460000C812 /* JoUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EC80BE81F8A2E3D0000C812 /* UITableView+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BE71F8A2E3D0000C812 /* UITableView+Compatible.swift */; };
 		3EC80BEB1F8A31180000C812 /* UICollectionView+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BEA1F8A31180000C812 /* UICollectionView+Compatible.swift */; };
+		60D9D2CC1FCC52FB000634A6 /* UIScreen+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9D2CB1FCC52FB000634A6 /* UIScreen+Compatible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3EC80BCB1F8A0A460000C812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EC80BE71F8A2E3D0000C812 /* UITableView+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Compatible.swift"; sourceTree = "<group>"; };
 		3EC80BEA1F8A31180000C812 /* UICollectionView+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Compatible.swift"; sourceTree = "<group>"; };
+		60D9D2CB1FCC52FB000634A6 /* UIScreen+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Compatible.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				3EC80BC21F8A0A460000C812 /* UIView+Compatible.swift */,
 				3EC80BE71F8A2E3D0000C812 /* UITableView+Compatible.swift */,
 				3EC80BEA1F8A31180000C812 /* UICollectionView+Compatible.swift */,
+				60D9D2CB1FCC52FB000634A6 /* UIScreen+Compatible.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				3EC80BD21F8A0AA30000C812 /* UIView+SupportingLoad.swift in Sources */,
 				3EC80BE81F8A2E3D0000C812 /* UITableView+Compatible.swift in Sources */,
 				3EC80BD11F8A0AA30000C812 /* DispatchQueue+Compatible.swift in Sources */,
+				60D9D2CC1FCC52FB000634A6 /* UIScreen+Compatible.swift in Sources */,
 				3EC80BEB1F8A31180000C812 /* UICollectionView+Compatible.swift in Sources */,
 				3EC80BCE1F8A0A8E0000C812 /* JoUIKit.swift in Sources */,
 				3EC80BD31F8A0AA30000C812 /* UIResponder+SupportingLoad.swift in Sources */,
