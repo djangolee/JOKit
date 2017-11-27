@@ -14,37 +14,32 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "JoUIKit"
+       
+        let v = JoView()
+        v.frame.size = CGSize(width: 100, height: 200)
+        v.center = view.center
+        v.layer.borderWidth = 1
+        view.addSubview(v)
         
-        print(view.jo.viewController as Any)
-        print(view.jo.viewControllers as Any)
+        v.jo.addSeparator(.trailing)
+        v.jo.separatorTrailingLine?.jo.trailingConstraint?.first?.constant = -15
+        v.jo.separatorTrailingLine?.jo.topConstraint?.first?.constant = 15
+        v.jo.separatorTrailingLine?.jo.bottomConstraint?.first?.constant = -15
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            let joView = JoSubView()
-            joView.didMoveToWindow()
-            joView.frame = self.view.bounds
-            joView.didMoveToWindow()
-            
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 13) {
-                print("1")
-                joView.removeFromSuperview()
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 23) {
-                print("2")
-                self.view.addSubview(joView)
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 33) {
-                print("3")
-                joView.removeFromSuperview()
-                joView.frame = self.view.bounds
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 43) {
-                print("4")
-                self.view.addSubview(joView)
-            }
-        }
+        v.jo.addSeparator(.top)
+        v.jo.separatorTopLine?.jo.trailingConstraint?.first?.constant = -15
+        v.jo.separatorTopLine?.jo.topConstraint?.first?.constant = 15
+        v.jo.separatorTopLine?.jo.leadingConstraint?.first?.constant = 15
+        
+        v.jo.addSeparator(.leading)
+        v.jo.separatorLeadingLine?.jo.bottomConstraint?.first?.constant = -15
+        v.jo.separatorLeadingLine?.jo.topConstraint?.first?.constant = 15
+        v.jo.separatorLeadingLine?.jo.leadingConstraint?.first?.constant = 15
+        
+        v.jo.addSeparator(.bottom)
+        v.jo.separatorBottomLine?.jo.bottomConstraint?.first?.constant = -15
+        v.jo.separatorBottomLine?.jo.trailingConstraint?.first?.constant = -15
+        v.jo.separatorBottomLine?.jo.leadingConstraint?.first?.constant = 15
     }
 }
 
