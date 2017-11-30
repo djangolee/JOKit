@@ -21,6 +21,12 @@ class ViewController: UIViewController {
         v.layer.borderWidth = 1
         view.addSubview(v)
         
+        let a = JoLayer()
+        a.frame.size = CGSize(width: 50, height: 50)
+        a.position = view.center
+        a.borderWidth = 1
+        v.layer.addSublayer(a)
+        
         v.jo.addSeparator(.trailing)
         v.jo.separatorTrailingLine?.jo.trailingConstraint?.first?.constant = -15
         v.jo.separatorTrailingLine?.jo.topConstraint?.first?.constant = 15
@@ -46,13 +52,9 @@ class ViewController: UIViewController {
 class JoView: UIView {
     
     override func didMoveToWindow() {
-        print("JoView 1")
         super.didMoveToWindow()
-        print("JoView 2")
+        print("JoView " + #function)
     }
-}
-
-extension JoView {
     
     override func jo_prepareLoadView() {
         super.jo_prepareLoadView()
@@ -63,7 +65,7 @@ extension JoView {
         super.jo_setupUI()
         print("JoView " + #function)
     }
-
+    
     override func jo_setupSubviews() {
         super.jo_setupSubviews()
         print("JoView " + #function)
@@ -73,46 +75,33 @@ extension JoView {
         super.jo_bindingSubviewsLayout()
         print("JoView " + #function)
     }
-    
 }
 
-class JoSubView: JoView {
+class JoLayer: CALayer {
     
-    override func didMoveToWindow() {
-        print("JoSubView 1")
-        super.didMoveToWindow()
-        print("JoSubView 2 \n")
+    override func layoutSublayers() {
+        super.layoutSublayers()
+        print("JoLayer " + #function)
     }
-    
-    override func layoutSubviews() {
-        print("layoutSubviews 1")
-        super.layoutSubviews()
-        print("layoutSubviews 2")
-    }
-}
-
-extension JoSubView {
     
     override func jo_prepareLoadView() {
         super.jo_prepareLoadView()
-        print("JoSubView " + #function)
+        print("JoLayer " + #function)
     }
     
     override func jo_setupUI() {
         super.jo_setupUI()
-        print("JoSubView " + #function)
+        print("JoLayer " + #function)
     }
     
     override func jo_setupSubviews() {
         super.jo_setupSubviews()
-        print("JoSubView " + #function)
+        print("JoLayer " + #function)
     }
     
     override func jo_bindingSubviewsLayout() {
         super.jo_bindingSubviewsLayout()
-        print("JoSubView " + #function)
-        
-        
+        print("JoLayer " + #function)
     }
-    
 }
+

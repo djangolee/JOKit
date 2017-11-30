@@ -16,6 +16,7 @@ public struct JoUIKit<Base> {
     
     public static func initializeJoUIKit() {
         UIResponder.methodExchangeImplementations()
+        CALayer.methodExchangeImplementations()
     }
 }
 
