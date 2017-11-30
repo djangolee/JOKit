@@ -26,5 +26,4 @@ extension UIView {
         self.jo_bindingSubviewsLayout()
         self.jo_setupUI()
     }
-    
 }

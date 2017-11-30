@@ -30,7 +30,7 @@ extension CALayer {
         guard Thread.main == Thread.current else { return }
         
         let initializationCompletion = objc_getAssociatedObject(self, &CALayer.supportingLoadViewToken) as? Bool
-        guard bounds.size != CGSize.zero, initializationCompletion == nil else { return }
+        guard superlayer != nil, bounds.size != CGSize.zero, initializationCompletion == nil else { return }
         
         objc_setAssociatedObject(self, &CALayer.supportingLoadViewToken, true, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         self.jo_prepareLoadView()
