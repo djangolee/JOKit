@@ -31,16 +31,21 @@ extension CALayer {
         
         let initializationCompletion = objc_getAssociatedObject(self, &CALayer.supportingLoadViewToken) as? Bool
         guard superlayer != nil, bounds.size != CGSize.zero, initializationCompletion == nil else { return }
-        
         objc_setAssociatedObject(self, &CALayer.supportingLoadViewToken, true, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        
         self.jo_prepareLoadView()
+        self.jo_setupUI()
         self.jo_setupSubviews()
         self.jo_bindingSubviewsLayout()
-        self.jo_setupUI()
+        self.jo_viewDidLoad()
     }
 }
 
 extension CALayer: JoSupportingLoadView {
+    
+    @objc open func jo_viewDidLoad() {
+        
+    }
     
     @objc open func jo_prepareLoadView() {
         

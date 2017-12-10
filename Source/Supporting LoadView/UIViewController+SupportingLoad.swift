@@ -22,9 +22,10 @@ extension UIViewController {
         objc_setAssociatedObject(self, &UIViewController.supportingLoadViewToken, true, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         
         self.jo_prepareLoadView()
+        self.jo_setupUI()
         self.jo_setupSubviews()
         self.jo_bindingSubviewsLayout()
-        self.jo_setupUI()
+        self.jo_viewDidLoad()
     }
     
 }

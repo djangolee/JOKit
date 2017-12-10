@@ -37,6 +37,14 @@ extension UIResponder {
 
 extension UIResponder: JoSupportingLoadView {
     
+    @objc open func jo_viewDidLoad() {
+        
+    }
+    
+    @objc open func jo_setupUI() {
+        
+    }
+    
     @objc open func jo_prepareLoadView() {
         
     }
@@ -48,32 +56,17 @@ extension UIResponder: JoSupportingLoadView {
     @objc open func jo_bindingSubviewsLayout() {
         
     }
-    
-    @objc open func jo_setupUI() {
-        
-    }
 }
 
 public protocol JoSupportingLoadView: class {
+    
+    func jo_viewDidLoad()
+    
+    func jo_setupUI()
     
     func jo_prepareLoadView()
     
     func jo_setupSubviews()
     
     func jo_bindingSubviewsLayout()
-    
-    func jo_setupUI()
-    
-}
-
-extension JoSupportingLoadView {
-    
-    public func jo_prepareLoadView() { }
-    
-    public func jo_setupSubviews() { }
-    
-    public func jo_bindingSubviewsLayout() { }
-    
-    public func jo_setupUI() { }
-    
 }

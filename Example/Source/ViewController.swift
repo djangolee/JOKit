@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ViewController " + #function)
+        
         title = "JoUIKit"
        
         let v = JoView()
@@ -47,6 +49,31 @@ class ViewController: UIViewController {
         v.jo.separatorBottomLine?.jo.trailingConstraint?.first?.constant = -15
         v.jo.separatorBottomLine?.jo.leadingConstraint?.first?.constant = 15
     }
+    
+    override func jo_prepareLoadView() {
+        super.jo_prepareLoadView()
+        print("ViewController " + #function)
+    }
+    
+    override func jo_setupUI() {
+        super.jo_setupUI()
+        print("ViewController " + #function)
+    }
+    
+    override func jo_setupSubviews() {
+        super.jo_setupSubviews()
+        print("ViewController " + #function)
+    }
+    
+    override func jo_bindingSubviewsLayout() {
+        super.jo_bindingSubviewsLayout()
+        print("ViewController " + #function)
+    }
+    
+    override func jo_viewDidLoad() {
+        super.jo_viewDidLoad()
+        print("ViewController " + #function)
+    }
 }
 
 class JoView: UIView {
@@ -75,6 +102,11 @@ class JoView: UIView {
         super.jo_bindingSubviewsLayout()
         print("JoView " + #function)
     }
+    
+    override func jo_viewDidLoad() {
+        super.jo_viewDidLoad()
+        print("JoView " + #function)
+    }
 }
 
 class JoLayer: CALayer {
@@ -101,6 +133,11 @@ class JoLayer: CALayer {
     
     override func jo_bindingSubviewsLayout() {
         super.jo_bindingSubviewsLayout()
+        print("JoLayer " + #function)
+    }
+    
+    override func jo_viewDidLoad() {
+        super.jo_viewDidLoad()
         print("JoLayer " + #function)
     }
 }

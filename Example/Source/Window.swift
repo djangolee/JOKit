@@ -10,24 +10,6 @@ import UIKit
 
 class Window: UIWindow {
     
-    override func didMoveToWindow() {
-        print("Window 1")
-        super.didMoveToWindow()
-        print("Window 2 \n")
-    }
-    
-    override func makeKeyAndVisible() {
-        print("Window 1 makeKeyAndVisible \n")
-        super.makeKeyAndVisible()
-        print("Window 2 makeKeyAndVisible \n")
-    }
-    
-    override func layoutSubviews() {
-        print("Window layoutSubviews 1")
-        super.layoutSubviews()
-        print("Window layoutSubviews 2")
-    }
-    
 }
 
 extension Window {
