@@ -16,8 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        JoUIKit<Any>.initializeJoUIKit()
-        
         let rootViewController = ViewController()
         let navigationController = NavigationController(rootViewController: rootViewController)
         self.window = Window(frame: UIScreen.main.bounds)

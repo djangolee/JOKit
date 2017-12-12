@@ -11,13 +11,11 @@
 		3EC80BCF1F8A0AA30000C812 /* UIViewController+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BC11F8A0A460000C812 /* UIViewController+Compatible.swift */; };
 		3EC80BD01F8A0AA30000C812 /* UIView+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BC21F8A0A460000C812 /* UIView+Compatible.swift */; };
 		3EC80BD11F8A0AA30000C812 /* DispatchQueue+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BC41F8A0A460000C812 /* DispatchQueue+Compatible.swift */; };
-		3EC80BD21F8A0AA30000C812 /* UIView+SupportingLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BC61F8A0A460000C812 /* UIView+SupportingLoad.swift */; };
-		3EC80BD31F8A0AA30000C812 /* UIResponder+SupportingLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BC71F8A0A460000C812 /* UIResponder+SupportingLoad.swift */; };
-		3EC80BD41F8A0AA30000C812 /* UIViewController+SupportingLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BC81F8A0A460000C812 /* UIViewController+SupportingLoad.swift */; };
 		3EC80BD61F8A0AA30000C812 /* JoUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC80BC91F8A0A460000C812 /* JoUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EC80BE81F8A2E3D0000C812 /* UITableView+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BE71F8A2E3D0000C812 /* UITableView+Compatible.swift */; };
 		3EC80BEB1F8A31180000C812 /* UICollectionView+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BEA1F8A31180000C812 /* UICollectionView+Compatible.swift */; };
-		6079CB6E1FD0319A00282A25 /* CALayer+SupportingLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6079CB6D1FD0319A00282A25 /* CALayer+SupportingLoad.swift */; };
+		60A0D3611FDF8B9A00C82DBF /* _SupportViewDidLoad.h in Headers */ = {isa = PBXBuildFile; fileRef = 60A0D35F1FDF8B9A00C82DBF /* _SupportViewDidLoad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60A0D3621FDF8B9A00C82DBF /* _SupportViewDidLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0D3601FDF8B9A00C82DBF /* _SupportViewDidLoad.m */; };
 		60D9D2CC1FCC52FB000634A6 /* UIScreen+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9D2CB1FCC52FB000634A6 /* UIScreen+Compatible.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,15 +24,13 @@
 		3EC80BC11F8A0A460000C812 /* UIViewController+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Compatible.swift"; sourceTree = "<group>"; };
 		3EC80BC21F8A0A460000C812 /* UIView+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Compatible.swift"; sourceTree = "<group>"; };
 		3EC80BC41F8A0A460000C812 /* DispatchQueue+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Compatible.swift"; sourceTree = "<group>"; };
-		3EC80BC61F8A0A460000C812 /* UIView+SupportingLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SupportingLoad.swift"; sourceTree = "<group>"; };
-		3EC80BC71F8A0A460000C812 /* UIResponder+SupportingLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+SupportingLoad.swift"; sourceTree = "<group>"; };
-		3EC80BC81F8A0A460000C812 /* UIViewController+SupportingLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SupportingLoad.swift"; sourceTree = "<group>"; };
 		3EC80BC91F8A0A460000C812 /* JoUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoUIKit.h; sourceTree = "<group>"; };
 		3EC80BCA1F8A0A460000C812 /* JoUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoUIKit.swift; sourceTree = "<group>"; };
 		3EC80BCB1F8A0A460000C812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EC80BE71F8A2E3D0000C812 /* UITableView+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Compatible.swift"; sourceTree = "<group>"; };
 		3EC80BEA1F8A31180000C812 /* UICollectionView+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Compatible.swift"; sourceTree = "<group>"; };
-		6079CB6D1FD0319A00282A25 /* CALayer+SupportingLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CALayer+SupportingLoad.swift"; path = "Source/Dispatch/CALayer+SupportingLoad.swift"; sourceTree = SOURCE_ROOT; };
+		60A0D35F1FDF8B9A00C82DBF /* _SupportViewDidLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _SupportViewDidLoad.h; sourceTree = "<group>"; };
+		60A0D3601FDF8B9A00C82DBF /* _SupportViewDidLoad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _SupportViewDidLoad.m; sourceTree = "<group>"; };
 		60D9D2CB1FCC52FB000634A6 /* UIScreen+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Compatible.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,10 +96,8 @@
 		3EC80BC51F8A0A460000C812 /* Supporting LoadView */ = {
 			isa = PBXGroup;
 			children = (
-				6079CB6D1FD0319A00282A25 /* CALayer+SupportingLoad.swift */,
-				3EC80BC61F8A0A460000C812 /* UIView+SupportingLoad.swift */,
-				3EC80BC71F8A0A460000C812 /* UIResponder+SupportingLoad.swift */,
-				3EC80BC81F8A0A460000C812 /* UIViewController+SupportingLoad.swift */,
+				60A0D35F1FDF8B9A00C82DBF /* _SupportViewDidLoad.h */,
+				60A0D3601FDF8B9A00C82DBF /* _SupportViewDidLoad.m */,
 			);
 			path = "Supporting LoadView";
 			sourceTree = "<group>";
@@ -125,6 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EC80BD61F8A0AA30000C812 /* JoUIKit.h in Headers */,
+				60A0D3611FDF8B9A00C82DBF /* _SupportViewDidLoad.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +155,7 @@
 				TargetAttributes = {
 					3EC80BB31F8A0A0A0000C812 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -197,15 +193,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EC80BCF1F8A0AA30000C812 /* UIViewController+Compatible.swift in Sources */,
-				3EC80BD41F8A0AA30000C812 /* UIViewController+SupportingLoad.swift in Sources */,
-				3EC80BD21F8A0AA30000C812 /* UIView+SupportingLoad.swift in Sources */,
 				3EC80BE81F8A2E3D0000C812 /* UITableView+Compatible.swift in Sources */,
 				3EC80BD11F8A0AA30000C812 /* DispatchQueue+Compatible.swift in Sources */,
 				60D9D2CC1FCC52FB000634A6 /* UIScreen+Compatible.swift in Sources */,
 				3EC80BEB1F8A31180000C812 /* UICollectionView+Compatible.swift in Sources */,
-				6079CB6E1FD0319A00282A25 /* CALayer+SupportingLoad.swift in Sources */,
 				3EC80BCE1F8A0A8E0000C812 /* JoUIKit.swift in Sources */,
-				3EC80BD31F8A0AA30000C812 /* UIResponder+SupportingLoad.swift in Sources */,
+				60A0D3621FDF8B9A00C82DBF /* _SupportViewDidLoad.m in Sources */,
 				3EC80BD01F8A0AA30000C812 /* UIView+Compatible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +322,7 @@
 		3EC80BBD1F8A0A0A0000C812 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -343,6 +337,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.django.JoUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -351,6 +346,7 @@
 		3EC80BBE1F8A0A0A0000C812 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
