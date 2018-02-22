@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "_SupportViewDidLoad.h"
+#import "SupportViewDidLoad.h"
 
 //! Project version number for JoUIKit.
 FOUNDATION_EXPORT double JoUIKitVersionNumber;

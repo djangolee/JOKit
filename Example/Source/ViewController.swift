@@ -11,13 +11,9 @@ import JoUIKit
 
 class ViewController: UIViewController {
 
-    static var number = 1
+    static var number = 0
     
-    var number: Int = 0 {
-        didSet {
-            print("\(number) " + #function + "\(self)")
-        }
-    }
+    var number: Int = 0
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let i = ViewController.number % 10
@@ -28,12 +24,13 @@ class ViewController: UIViewController {
             dismiss(animated: true, completion: nil)
         }
         print()
-        print()
     }
+    
+    //MARK: Self.view Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ViewController " + #function + "\(self)")
+        
         print()
         title = "JoUIKit"
        
@@ -94,201 +91,186 @@ class ViewController: UIViewController {
         v.jo.separatorBottomLine?.jo.leadingConstraint?.first?.constant = 15
     }
     
-    override func jo_prepareLoadView() {
-        super.jo_prepareLoadView()
-        number += 1
-        print("ViewController " + #function + "\(self)")
+    override func jo_viewWillInstallSubviews() {
+        super.jo_viewWillInstallSubviews()
+        number = ViewController.number
+        ViewController.number += 1
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
     }
     
-    override func jo_setupUI() {
-        super.jo_setupUI()
-        print("ViewController " + #function + "\(self)")
+    override func jo_viewDidInstallSubviews() {
+        super.jo_viewDidInstallSubviews()
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
     }
     
     override func jo_setupSubviews() {
         super.jo_setupSubviews()
-        print("ViewController " + #function + "\(self)")
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
     }
     
-    override func jo_bindingSubviewsLayout() {
-        super.jo_bindingSubviewsLayout()
-        print("ViewController " + #function + "\(self)")
-    }
-    
-    override func jo_viewDidLoad() {
-        super.jo_viewDidLoad()
-        print("ViewController " + #function + "\(self)")
+    override func jo_makeSubviewsLayout() {
+        super.jo_makeSubviewsLayout()
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
     }
     
     deinit {
-        print(#function + " \(self)")
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
     }
 }
 
 class JoView: UIView {
     
-    var number: Int = 0 {
-        didSet {
-            print("\(number) " + #function + "\(self)")
-        }
-    }
+    static var number = 0
+    var number: Int = 0
     
-    override func didMoveToWindow() {
-        super.didMoveToWindow()
-        print("JoView " + #function + "\(self)")
+    override func jo_viewDidLoad() {
+        super.jo_viewDidLoad()
         print()
+        
+        number = JoView.number
+        JoView.number += 1
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
     }
     
-    override func jo_prepareLoadView() {
-        super.jo_prepareLoadView()
-        number += 1
-        print("JoView " + #function + "\(self)")
+    override func jo_viewWillAppear() {
+        super.jo_viewWillAppear()
+        
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
     }
     
-    override func jo_setupUI() {
-        super.jo_setupUI()
-        print("JoView " + #function + "\(self)")
+    override func jo_viewDidAppear() {
+        super.jo_viewDidAppear()
+        
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
+    }
+    
+    override func jo_viewWillDisappear() {
+        super.jo_viewWillDisappear()
+        
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
+    }
+    
+    override func jo_viewDidDisappear() {
+        super.jo_viewDidDisappear()
+        
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
+    }
+    
+    override func jo_viewWillInstallSubviews() {
+        super.jo_viewWillInstallSubviews()
+        
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
+    }
+    
+    override func jo_viewDidInstallSubviews() {
+        super.jo_viewDidInstallSubviews()
+        
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
     }
     
     override func jo_setupSubviews() {
         super.jo_setupSubviews()
-        print("JoView " + #function + "\(self)")
+        
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
     }
     
-    override func jo_bindingSubviewsLayout() {
-        super.jo_bindingSubviewsLayout()
-        print("JoView " + #function + "\(self)")
+    override func jo_makeSubviewsLayout() {
+        super.jo_makeSubviewsLayout()
+        
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
     }
-    
-    override func jo_viewDidLoad() {
-        super.jo_viewDidLoad()
-        print("JoView " + #function + "\(self)")
-    }
-    
+
     deinit {
-        print(#function + " \(self)")
+        print("\(NSStringFromClass(self.classForCoder)):\(number) " + #function)
     }
 }
 
 class JoSubView: JoView {
     
-    override func didMoveToWindow() {
-        super.didMoveToWindow()
-        print("JoSubView " + #function + "\(self)")
-        print()
-    }
-    
-    override func jo_prepareLoadView() {
-        super.jo_prepareLoadView()
-        print("JoSubView " + #function + "\(self)")
-    }
-    
-    override func jo_setupUI() {
-        super.jo_setupUI()
-        print("JoSubView " + #function + "\(self)")
-    }
-    
-    override func jo_setupSubviews() {
-        super.jo_setupSubviews()
-        print("JoSubView " + #function + "\(self)")
-    }
-    
-    override func jo_bindingSubviewsLayout() {
-        super.jo_bindingSubviewsLayout()
-        print("JoSubView " + #function + "\(self)")
-    }
-    
-    override func jo_viewDidLoad() {
-        super.jo_viewDidLoad()
-        print("JoSubView " + #function + "\(self)")
-    }
-    
-    deinit {
-        print(#function + " \(self)")
-    }
 }
 
 class JoLayer: CALayer {
     
-    var number: Int = 0 {
-        didSet {
-            print("\(number) " + #function + "\(self)")
-        }
-    }
-    
-    override func layoutSublayers() {
-        super.layoutSublayers()
-        print("JoLayer " + #function + "\(self)")
-        print()
-    }
-    
-    override func jo_prepareLoadView() {
-        super.jo_prepareLoadView()
-        number += 1
-        print("JoLayer " + #function + "\(self)")
-    }
-    
-    override func jo_setupUI() {
-        super.jo_setupUI()
-        print("JoLayer " + #function + "\(self)")
-    }
-    
-    override func jo_setupSubviews() {
-        super.jo_setupSubviews()
-        print("JoLayer " + #function + "\(self)")
-    }
-    
-    override func jo_bindingSubviewsLayout() {
-        super.jo_bindingSubviewsLayout()
-        print("JoLayer " + #function + "\(self)")
-    }
-    
-    override func jo_viewDidLoad() {
-        super.jo_viewDidLoad()
-        print("JoLayer " + #function + "\(self)")
-    }
-    
-    deinit {
-        print(#function + " \(self)")
-    }
+//    var number: Int = 0 {
+//        didSet {
+//            print("\(number) " + #function + "\(self)")
+//        }
+//    }
+//
+//    override func layoutSublayers() {
+//        super.layoutSublayers()
+//        print("JoLayer " + #function + "\(self)")
+//        print()
+//    }
+//
+//    override func jo_prepareLoadView() {
+//        super.jo_prepareLoadView()
+//        number += 1
+//        print("JoLayer " + #function + "\(self)")
+//    }
+//
+//    override func jo_setupUI() {
+//        super.jo_setupUI()
+//        print("JoLayer " + #function + "\(self)")
+//    }
+//
+//    override func jo_setupSubviews() {
+//        super.jo_setupSubviews()
+//        print("JoLayer " + #function + "\(self)")
+//    }
+//
+//    override func jo_bindingSubviewsLayout() {
+//        super.jo_bindingSubviewsLayout()
+//        print("JoLayer " + #function + "\(self)")
+//    }
+//
+//    override func jo_viewDidLoad() {
+//        super.jo_viewDidLoad()
+//        print("JoLayer " + #function + "\(self)")
+//    }
+//
+//    deinit {
+//        print(#function + " \(self)")
+//    }
 }
 
 
 class JoSubLayer: JoLayer {
     
-    override func layoutSublayers() {
-        super.layoutSublayers()
-        print("JoSubLayer " + #function + "\(self)")
-        print()
-    }
+//    override func layoutSublayers() {
+//        super.layoutSublayers()
+//        print("JoSubLayer " + #function + "\(self)")
+//        print()
+//    }
+//
+//    override func jo_prepareLoadView() {
+//        super.jo_prepareLoadView()
+//        print("JoSubLayer " + #function + "\(self)")
+//    }
+//
+//    override func jo_setupUI() {
+//        super.jo_setupUI()
+//        print("JoSubLayer " + #function + "\(self)")
+//    }
+//
+//    override func jo_setupSubviews() {
+//        super.jo_setupSubviews()
+//        print("JoSubLayer " + #function + "\(self)")
+//    }
+//
+//    override func jo_bindingSubviewsLayout() {
+//        super.jo_bindingSubviewsLayout()
+//        print("JoSubLayer " + #function + "\(self)")
+//    }
+//
+//    override func jo_viewDidLoad() {
+//        super.jo_viewDidLoad()
+//        print("JoSubLayer " + #function + "\(self)")
+//    }
+//
+//    deinit {
+//        print(#function + " \(self)")
+//    }
     
-    override func jo_prepareLoadView() {
-        super.jo_prepareLoadView()
-        print("JoSubLayer " + #function + "\(self)")
-    }
-    
-    override func jo_setupUI() {
-        super.jo_setupUI()
-        print("JoSubLayer " + #function + "\(self)")
-    }
-    
-    override func jo_setupSubviews() {
-        super.jo_setupSubviews()
-        print("JoSubLayer " + #function + "\(self)")
-    }
-    
-    override func jo_bindingSubviewsLayout() {
-        super.jo_bindingSubviewsLayout()
-        print("JoSubLayer " + #function + "\(self)")
-    }
-    
-    override func jo_viewDidLoad() {
-        super.jo_viewDidLoad()
-        print("JoSubLayer " + #function + "\(self)")
-    }
-    
-    deinit {
-        print(#function + " \(self)")
-    }
 }
 

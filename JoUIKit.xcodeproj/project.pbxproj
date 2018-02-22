@@ -14,8 +14,8 @@
 		3EC80BD61F8A0AA30000C812 /* JoUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC80BC91F8A0A460000C812 /* JoUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EC80BE81F8A2E3D0000C812 /* UITableView+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BE71F8A2E3D0000C812 /* UITableView+Compatible.swift */; };
 		3EC80BEB1F8A31180000C812 /* UICollectionView+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BEA1F8A31180000C812 /* UICollectionView+Compatible.swift */; };
-		60A0D3611FDF8B9A00C82DBF /* _SupportViewDidLoad.h in Headers */ = {isa = PBXBuildFile; fileRef = 60A0D35F1FDF8B9A00C82DBF /* _SupportViewDidLoad.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		60A0D3621FDF8B9A00C82DBF /* _SupportViewDidLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0D3601FDF8B9A00C82DBF /* _SupportViewDidLoad.m */; };
+		60A0D3611FDF8B9A00C82DBF /* SupportViewDidLoad.h in Headers */ = {isa = PBXBuildFile; fileRef = 60A0D35F1FDF8B9A00C82DBF /* SupportViewDidLoad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60A0D3621FDF8B9A00C82DBF /* SupportViewDidLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0D3601FDF8B9A00C82DBF /* SupportViewDidLoad.m */; };
 		60D9D2CC1FCC52FB000634A6 /* UIScreen+Compatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9D2CB1FCC52FB000634A6 /* UIScreen+Compatible.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,8 +29,8 @@
 		3EC80BCB1F8A0A460000C812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EC80BE71F8A2E3D0000C812 /* UITableView+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Compatible.swift"; sourceTree = "<group>"; };
 		3EC80BEA1F8A31180000C812 /* UICollectionView+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Compatible.swift"; sourceTree = "<group>"; };
-		60A0D35F1FDF8B9A00C82DBF /* _SupportViewDidLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _SupportViewDidLoad.h; sourceTree = "<group>"; };
-		60A0D3601FDF8B9A00C82DBF /* _SupportViewDidLoad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _SupportViewDidLoad.m; sourceTree = "<group>"; };
+		60A0D35F1FDF8B9A00C82DBF /* SupportViewDidLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupportViewDidLoad.h; sourceTree = "<group>"; };
+		60A0D3601FDF8B9A00C82DBF /* SupportViewDidLoad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupportViewDidLoad.m; sourceTree = "<group>"; };
 		60D9D2CB1FCC52FB000634A6 /* UIScreen+Compatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Compatible.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,8 +96,8 @@
 		3EC80BC51F8A0A460000C812 /* Supporting LoadView */ = {
 			isa = PBXGroup;
 			children = (
-				60A0D35F1FDF8B9A00C82DBF /* _SupportViewDidLoad.h */,
-				60A0D3601FDF8B9A00C82DBF /* _SupportViewDidLoad.m */,
+				60A0D35F1FDF8B9A00C82DBF /* SupportViewDidLoad.h */,
+				60A0D3601FDF8B9A00C82DBF /* SupportViewDidLoad.m */,
 			);
 			path = "Supporting LoadView";
 			sourceTree = "<group>";
@@ -119,7 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EC80BD61F8A0AA30000C812 /* JoUIKit.h in Headers */,
-				60A0D3611FDF8B9A00C82DBF /* _SupportViewDidLoad.h in Headers */,
+				60A0D3611FDF8B9A00C82DBF /* SupportViewDidLoad.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +198,7 @@
 				60D9D2CC1FCC52FB000634A6 /* UIScreen+Compatible.swift in Sources */,
 				3EC80BEB1F8A31180000C812 /* UICollectionView+Compatible.swift in Sources */,
 				3EC80BCE1F8A0A8E0000C812 /* JoUIKit.swift in Sources */,
-				60A0D3621FDF8B9A00C82DBF /* _SupportViewDidLoad.m in Sources */,
+				60A0D3621FDF8B9A00C82DBF /* SupportViewDidLoad.m in Sources */,
 				3EC80BD01F8A0AA30000C812 /* UIView+Compatible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
