@@ -14,201 +14,128 @@ extension JoUIKit where Base: UIView {
     public struct UIViewSeparatorPosition : OptionSet {
         
         public let rawValue: UInt
-        
         public init(rawValue: UInt) {
             self.rawValue = rawValue
-        }
-        
-        public static var all: UIViewSeparatorPosition {
-            return UIViewSeparatorPosition(rawValue: 1 << 4 - 1)
-        }
-        
-        public static var top: UIViewSeparatorPosition {
-            return UIViewSeparatorPosition(rawValue: 1 << 0)
-        }
-        
-        public static var leading: UIViewSeparatorPosition {
-            return UIViewSeparatorPosition(rawValue: 1 << 1)
-        }
-        
-        public static var bottom: UIViewSeparatorPosition {
-            return UIViewSeparatorPosition(rawValue: 1 << 2)
-        }
-        
-        public static var trailing: UIViewSeparatorPosition {
-            return UIViewSeparatorPosition(rawValue: 1 << 3)
         }
     }
     
     public var separatorTopLine: UIView? {
-        get {
-            return base.separatorTopLine
-        }
+        return base.separatorTopLine
     }
     
     public var separatorLeadingLine: UIView? {
-        get {
-            return base.separatorLeadingLine
-        }
+        return base.separatorLeadingLine
     }
     
     public var separatorBottomLine: UIView? {
-        get {
-            return base.separatorBottomLine
-        }
+        return base.separatorBottomLine
     }
     
     public var separatorTrailingLine: UIView? {
-        get {
-            return base.separatorTrailingLine
-        }
+        return base.separatorTrailingLine
     }
     
-    public func addSeparator(_ position: UIViewSeparatorPosition) {
+    public func setSeparator(_ position: UIViewSeparatorPosition) {
         
         if position.contains(.top) {
             if base.separatorTopLine == nil {
-                base.separatorTopLine = UIView()
+                base.separatorTopLine = JoViewSeparatorView()
             }
-            base.separatorTopLine?.isHidden = false
+        } else {
+            base.separatorTopLine?.removeFromSuperview()
+            base.separatorTopLine = nil
         }
         
         if position.contains(.leading) {
             if base.separatorLeadingLine == nil {
-                base.separatorLeadingLine = UIView()
+                base.separatorLeadingLine = JoViewSeparatorView()
             }
-            base.separatorLeadingLine?.isHidden = false
+        } else {
+            base.separatorLeadingLine?.removeFromSuperview()
+            base.separatorLeadingLine = nil
         }
         
         if position.contains(.bottom) {
             if base.separatorBottomLine == nil {
-                base.separatorBottomLine = UIView()
+                base.separatorBottomLine = JoViewSeparatorView()
             }
-            base.separatorBottomLine?.isHidden = false
+        } else {
+            base.separatorBottomLine?.removeFromSuperview()
+            base.separatorBottomLine = nil
         }
         
         if position.contains(.trailing) {
             if base.separatorTrailingLine == nil {
-                base.separatorTrailingLine = UIView()
+                base.separatorTrailingLine = JoViewSeparatorView()
             }
-            base.separatorTrailingLine?.isHidden = false
+        } else {
+            base.separatorTrailingLine?.removeFromSuperview()
+            base.separatorTrailingLine = nil
         }
     }
     
     public func removeSeparator(_ position: UIViewSeparatorPosition) {
-        
         if position.contains(.top) {
-            base.separatorTopLine?.isHidden = true
+            base.separatorTopLine?.removeFromSuperview()
+            base.separatorTopLine = nil
         }
         
         if position.contains(.leading) {
-            base.separatorLeadingLine?.isHidden = true
+            base.separatorLeadingLine?.removeFromSuperview()
+            base.separatorLeadingLine = nil
         }
         
         if position.contains(.bottom) {
-            base.separatorBottomLine?.isHidden = true
+            base.separatorBottomLine?.removeFromSuperview()
+            base.separatorBottomLine = nil
         }
         
         if position.contains(.trailing) {
-            base.separatorTrailingLine?.isHidden = true
+            base.separatorTrailingLine?.removeFromSuperview()
+            base.separatorTrailingLine = nil
         }
     }
 }
 
-// LayoutConstraint
+extension JoUIKit.UIViewSeparatorPosition where Base: UIView {
+    
+    public static var all: JoUIKit.UIViewSeparatorPosition {
+        return JoUIKit.UIViewSeparatorPosition(rawValue: 1 << 4 - 1)
+    }
+    
+    public static var top: JoUIKit.UIViewSeparatorPosition {
+        return JoUIKit.UIViewSeparatorPosition(rawValue: 1 << 0)
+    }
+    
+    public static var leading: JoUIKit.UIViewSeparatorPosition {
+        return JoUIKit.UIViewSeparatorPosition(rawValue: 1 << 1)
+    }
+    
+    public static var bottom: JoUIKit.UIViewSeparatorPosition {
+        return JoUIKit.UIViewSeparatorPosition(rawValue: 1 << 2)
+    }
+    
+    public static var trailing: JoUIKit.UIViewSeparatorPosition {
+        return JoUIKit.UIViewSeparatorPosition(rawValue: 1 << 3)
+    }
+}
 
-extension JoUIKit where Base: UIView {
+private class JoViewSeparatorView: UIView {
     
-    public var topConstraint: [NSLayoutConstraint]? {
-        return base.superview?.constraints.filter({ (constraint) -> Bool in
-            if let view = constraint.firstItem as? UIView, view == base, constraint.firstAttribute == .top {
-                return true
-            }
-            return false
-        })
+    var positionItem1: NSLayoutConstraint?
+    var positionItem2: NSLayoutConstraint?
+    var positionItem3: NSLayoutConstraint?
+    var thicknessItem: NSLayoutConstraint?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        backgroundColor = UIColor(red: 213 / 255.0, green: 213 / 255.0, blue: 213 / 255.0, alpha: 1)
     }
     
-    public var leadingConstraint: [NSLayoutConstraint]? {
-        return base.superview?.constraints.filter({ (constraint) -> Bool in
-            if let view = constraint.firstItem as? UIView, view == base, constraint.firstAttribute == .leading {
-                return true
-            }
-            return false
-        })
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    
-    public var bottomConstraint: [NSLayoutConstraint]? {
-        return base.superview?.constraints.filter({ (constraint) -> Bool in
-            if let view = constraint.firstItem as? UIView, view == base, constraint.firstAttribute == .bottom {
-                return true
-            }
-            return false
-        })
-    }
-    
-    public var trailingConstraint: [NSLayoutConstraint]? {
-        return base.superview?.constraints.filter({ (constraint) -> Bool in
-            if let view = constraint.firstItem as? UIView, view == base, constraint.firstAttribute == .trailing {
-                return true
-            }
-            return false
-        })
-    }
-    
-    public var leftConstraint: [NSLayoutConstraint]? {
-        return base.superview?.constraints.filter({ (constraint) -> Bool in
-            if let view = constraint.firstItem as? UIView, view == base, constraint.firstAttribute == .left {
-                return true
-            }
-            return false
-        })
-    }
-    
-    public var rightConstraint: [NSLayoutConstraint]? {
-        return base.superview?.constraints.filter({ (constraint) -> Bool in
-            if let view = constraint.firstItem as? UIView, view == base, constraint.firstAttribute == .right {
-                return true
-            }
-            return false
-        })
-    }
-    
-    public var widthConstraint: [NSLayoutConstraint]? {
-        return base.superview?.constraints.filter({ (constraint) -> Bool in
-            if let view = constraint.firstItem as? UIView, view == base, constraint.firstAttribute == .width {
-                return true
-            }
-            return false
-        })
-    }
-    
-    public var heightConstraint: [NSLayoutConstraint]? {
-        return base.superview?.constraints.filter({ (constraint) -> Bool in
-            if let view = constraint.firstItem as? UIView, view == base, constraint.firstAttribute == .height {
-                return true
-            }
-            return false
-        })
-    }
-    
-    public var centerXConstraint: [NSLayoutConstraint]? {
-        return base.superview?.constraints.filter({ (constraint) -> Bool in
-            if let view = constraint.firstItem as? UIView, view == base, constraint.firstAttribute == .centerX {
-                return true
-            }
-            return false
-        })
-    }
-    
-    public var centerYConstraint: [NSLayoutConstraint]? {
-        return base.superview?.constraints.filter({ (constraint) -> Bool in
-            if let view = constraint.firstItem as? UIView, view == base, constraint.firstAttribute == .centerY {
-                return true
-            }
-            return false
-        })
-    }
-    
 }
 
 // Separator Supporting
@@ -220,23 +147,12 @@ extension UIView {
     private static var separatorBottomToken: CChar = 0
     private static var separatorTrailingToken: CChar = 0
     
-    private static let lineColor = UIColor(red: 213 / 255.0, green: 213 / 255.0, blue: 213 / 255.0, alpha: 1)
-    private static let apixel = UIScreen.main.jo.apixel
-    
     fileprivate var separatorTopLine: UIView? {
         get {
             return objc_getAssociatedObject(self, &UIView.separatorTopToken) as? UIView
         }
         set {
             objc_setAssociatedObject(self, &UIView.separatorTopToken, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            guard let newValue = newValue else { return }
-            newValue.backgroundColor = UIView.lineColor
-            addSubview(newValue)
-            newValue.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint(item: newValue, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: newValue, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: newValue, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: newValue, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: UIView.apixel).isActive = true
         }
     }
     
@@ -246,14 +162,6 @@ extension UIView {
         }
         set {
             objc_setAssociatedObject(self, &UIView.separatorLeadingToken, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            guard let newValue = newValue else { return }
-            newValue.backgroundColor = UIView.lineColor
-            addSubview(newValue)
-            newValue.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint(item: newValue, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: newValue, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: newValue, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: newValue, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: UIView.apixel).isActive = true
         }
     }
     
@@ -263,14 +171,6 @@ extension UIView {
         }
         set {
             objc_setAssociatedObject(self, &UIView.separatorBottomToken, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            guard let newValue = newValue else { return }
-            newValue.backgroundColor = UIView.lineColor
-            addSubview(newValue)
-            newValue.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint(item: newValue, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: newValue, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: newValue, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: newValue, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: UIView.apixel).isActive = true
         }
     }
     
@@ -280,14 +180,6 @@ extension UIView {
         }
         set {
             objc_setAssociatedObject(self, &UIView.separatorTrailingToken, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            guard let newValue = newValue else { return }
-            newValue.backgroundColor = UIView.lineColor
-            addSubview(newValue)
-            newValue.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint(item: newValue, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: newValue, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: newValue, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: newValue, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: UIView.apixel).isActive = true
         }
     }
 }
