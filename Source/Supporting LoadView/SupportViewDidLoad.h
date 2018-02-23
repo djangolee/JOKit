@@ -41,14 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)jo_layerDidLoad NS_REQUIRES_SUPER;
 
-- (void)jo_layerWillAppear NS_REQUIRES_SUPER;
-- (void)jo_layerDidAppear NS_REQUIRES_SUPER;
+- (void)jo_layerWillInstallSublayers NS_REQUIRES_SUPER;
+- (void)jo_layerDidInstallSublayers NS_REQUIRES_SUPER;
 
-- (void)jo_layerDidDisappear NS_REQUIRES_SUPER;
-- (void)jo_layerWillDisappear NS_REQUIRES_SUPER;
-
-- (void)jo_layerillInstallSubviews NS_REQUIRES_SUPER;
-- (void)jo_layerDidInstallSubviews NS_REQUIRES_SUPER;
 - (void)jo_setupSublayers NS_REQUIRES_SUPER;
 - (void)jo_makeSublayersLayout NS_REQUIRES_SUPER;
 

@@ -13,7 +13,9 @@ import JoUIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let textView = UITextView()
+    var collection: [String: [String]] = Dictionary()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let rootViewController = ViewController()
@@ -23,7 +25,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         self.window?.didMoveToWindow()
+        
+        self.window?.addSubview(textView)
+        textView.backgroundColor = .black
+        textView.textColor = .white
+        textView.font = .systemFont(ofSize: 10)
+        textView.isEditable = false
+        textView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - 300, width: UIScreen.main.bounds.width, height: 300)
+        
         return true
+    }
+    
+    func addText(obj: AnyObject, text: String) {
+
+        let hashInt = unsafeBitCast(obj, to: Int.self).hashValue
+        let hashValue = "\(NSStringFromClass(obj.classForCoder)) \(hashInt)"
+        var value = collection[hashValue] ?? []
+        value.append(text)
+        collection[hashValue] = value
+        
+        var content = ""
+        for (key, list) in collection {
+            content.append("\(key) \n")
+            for string in list {
+                content.append("\(string)\n")
+            }
+            content.append("\n")
+        }
+        textView.text = content
+        self.window?.addSubview(textView)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

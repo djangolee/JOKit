@@ -99,27 +99,21 @@ static char _supportload_associatedKey;
     [self _jo_willMoveToWindow:newWindow];
     
     if (!self._supportload_onceToken) {
-        [self performSelectorOnMainThread:@selector(_jo_requiresviewDidLoad) withObject:nil waitUntilDone:nil];
-    } else {
-        if (newWindow) {
-            [self performSelectorOnMainThread:@selector(_jo_viewWillAppear) withObject:nil waitUntilDone:nil];
-        } else {
-            [self performSelectorOnMainThread:@selector(_jo_viewWillDisappear) withObject:nil waitUntilDone:nil];
-        }
+        [self _jo_requiresviewDidLoad:newWindow];
     }
+    if (!self._supportload_onceToken) return;
+    
+    newWindow ? [self _jo_viewWillAppear] : [self _jo_viewWillDisappear];
 }
 
 - (void)_jo_didMoveToWindow {
     [self _jo_didMoveToWindow];
-    if (self.window) {
-        [self performSelectorOnMainThread:@selector(_jo_viewDidDisappear) withObject:nil waitUntilDone:nil];
-    } else {
-        [self performSelectorOnMainThread:@selector(_jo_viewDidDisappear) withObject:nil waitUntilDone:nil];
-    }
+    
+    self.window ? [self _jo_viewDidAppear] : [self _jo_viewDidDisappear];
 }
 
-- (void)_jo_requiresviewDidLoad {
-    if (self.window && !self._supportload_onceToken) {
+- (void)_jo_requiresviewDidLoad:(UIWindow *)newWindow {
+    if (newWindow && !self._supportload_onceToken) {
         self._supportload_onceToken = [NSObject new];
         [self jo_viewDidLoad];
         [self performSelectorOnMainThread:@selector(_jo_viewWillInstallSubviews) withObject:nil waitUntilDone:nil];
@@ -171,52 +165,60 @@ static char _supportload_associatedKey;
 - (void)jo_viewDidInstallSubviews { }
 - (void)jo_setupSubviews { }
 - (void)jo_makeSubviewsLayout { }
+
 @end
-//
-//#pragma mark CALayer
-//
-//@implementation CALayer (_SupportLoad)
-//
-//
-//+ (void)load {
-//    Method origin = class_getInstanceMethod(self, @selector(layoutSublayers));
-//    Method support = class_getInstanceMethod(self, @selector(_SupportLoadView));
-//    method_exchangeImplementations(origin, support);
-//}
-//
-//-(void)_SupportLoadView {
-//    [self _SupportLoadView];
-//    if (self.superlayer && !self._supportload_onceToken) {
-//        self._supportload_onceToken = [NSObject new];
-//        [self jo_prepareLoadView];
-//        [self jo_setupUI];
-//        [self jo_setupSubviews];
-//        [self jo_bindingSubviewsLayout];
-//        [self jo_viewDidLoad];
-//    }
-//}
-//
-//#pragma SupportingLoad methods
-//
-//-(void)jo_prepareLoadView { }
-//-(void)jo_setupUI { }
-//-(void)jo_setupSubviews { }
-//-(void)jo_bindingSubviewsLayout { }
-//-(void)jo_viewDidLoad { }
-//
-//@end
-//
-//#pragma mark UIResponder
-//
-//@implementation UIResponder (_SupportLoad)
-//
-//#pragma SupportingLoad methods
-//
-//-(void)jo_prepareLoadView { }
-//-(void)jo_setupUI { }
-//-(void)jo_setupSubviews { }
-//-(void)jo_bindingSubviewsLayout { }
-//-(void)jo_viewDidLoad { }
-//
-//@end
+
+#pragma mark CALayer
+
+@implementation CALayer (_SupportLoad)
+
++ (void)load {
+    Method origin = class_getInstanceMethod(self, @selector(layoutSublayers));
+    Method support = class_getInstanceMethod(self, @selector(_jo_layoutSublayers));
+    method_exchangeImplementations(origin, support);
+}
+
+// private
+
+- (void)_jo_layoutSublayers {
+    [self _jo_layoutSublayers];
+    
+    if (self.superlayer && !self._supportload_onceToken) {
+        self._supportload_onceToken = [NSObject new];
+        [self performSelectorOnMainThread:@selector(_jo_requiresLayerDidLoad) withObject:nil waitUntilDone:nil];
+    }
+}
+
+- (void)_jo_requiresLayerDidLoad {
+    [self jo_layerDidLoad];
+    [self performSelectorOnMainThread:@selector(_jo_layerWillInstallSublayers) withObject:nil waitUntilDone:nil];
+}
+
+- (void)_jo_layerWillInstallSublayers {
+    [self jo_layerWillInstallSublayers];
+    [self performSelectorOnMainThread:@selector(_jo_installSublayers) withObject:nil waitUntilDone:nil];
+}
+
+- (void)_jo_installSublayers {
+    [self jo_setupSublayers];
+    [self jo_makeSublayersLayout];
+    [self performSelectorOnMainThread:@selector(_jo_layerDidInstallSublayers) withObject:nil waitUntilDone:nil];
+}
+
+- (void)_jo_layerDidInstallSublayers {
+    [self jo_layerDidInstallSublayers];
+}
+
+// public
+
+- (void)jo_layerDidLoad { }
+
+- (void)jo_layerWillInstallSublayers { }
+- (void)jo_layerDidInstallSublayers { }
+
+- (void)jo_setupSublayers { }
+- (void)jo_makeSublayersLayout { }
+
+@end
+
 
