@@ -11,4 +11,9 @@ extension JoUIKit where Base: UIScreen {
     public var apixel: CGFloat {
         return 1 / base.scale
     }
+    
+    public var boundsSize: CGSize {
+        return base.bounds.size
+    }
+    
 }

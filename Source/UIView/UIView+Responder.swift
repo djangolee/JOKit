@@ -22,18 +22,33 @@ extension JoUIKit where Base: UIView {
             return next as? UIViewController
         }
     }
-    
+
     public var viewControllers: [UIViewController]? {
         get {
-            var viewControllers = [UIViewController]()
+            var viewControllers: [UIViewController]?
             var next = self.base.next
             while next != nil {
                 if let viewController = next as? UIViewController {
-                    viewControllers.append(viewController)
+                    viewControllers = viewControllers ?? [UIViewController]()
+                    viewControllers?.append(viewController)
                 }
                 next = next?.next
             }
-            return viewControllers.count <= 0 ? nil : viewControllers
+            return viewControllers
+        }
+    }
+    
+    public func topViewController(window: UIWindow?) -> UIViewController? {
+        var topViewController = window?.rootViewController
+        while topViewController?.presentedViewController != nil {
+            topViewController = topViewController?.presentedViewController
+        }
+        return topViewController
+    }
+    
+    public var topViewController: UIViewController? {
+        get {
+            return topViewController(window: UIApplication.shared.keyWindow)
         }
     }
     
