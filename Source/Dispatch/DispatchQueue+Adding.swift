@@ -21,6 +21,5 @@ extension JoUIKit where Base: DispatchQueue {
             work()
         }
     }
-
 }
 
