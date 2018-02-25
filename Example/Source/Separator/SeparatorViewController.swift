@@ -23,6 +23,7 @@ class SeparatorViewController: UIViewController {
     let thicknessTextField = UITextField()
     
     let resetItem = UIButton(type: .system)
+    let outItem = UIButton(type: .system)
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -49,6 +50,10 @@ class SeparatorViewController: UIViewController {
             boxView.jo.setSeparatorTrailinglineCorner(corner, animated: switchItem.isOn)
         }
     }
+    
+    @objc private func onClickOut(_ send: UIControl) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension SeparatorViewController {
@@ -67,6 +72,7 @@ extension SeparatorViewController {
         setupTextField()
         setupResetItem()
         setupSwitch()
+        setupOutItem()
     }
     
     override func jo_makeSubviewsLayout() {
@@ -101,6 +107,9 @@ extension SeparatorViewController {
         
         resetItem.sizeToFit()
         resetItem.center = CGPoint(x: view.frame.midX, y: thicknessTextField.frame.maxY + 40)
+        
+        outItem.sizeToFit()
+        outItem.center = CGPoint(x: resetItem.frame.maxX + 50, y: resetItem.center.y)
         
         switchItem.sizeToFit()
         switchItem.center = CGPoint(x: resetItem.frame.minX - 50, y: resetItem.center.y)
@@ -170,6 +179,16 @@ extension SeparatorViewController {
         resetItem.contentEdgeInsets = UIEdgeInsets(top: 15, left: 25, bottom: 15, right: 25)
         resetItem.addTarget(self, action: #selector(onClickReset(_:)), for: .touchUpInside)
         view.addSubview(resetItem)
+    }
+    
+    private func setupOutItem() {
+        outItem.setTitle("Out", for: .normal)
+        outItem.layer.cornerRadius = 3;
+        outItem.layer.borderWidth = 1;
+        outItem.layer.borderColor = outItem.titleLabel?.textColor.cgColor;
+        outItem.contentEdgeInsets = UIEdgeInsets(top: 15, left: 25, bottom: 15, right: 25)
+        outItem.addTarget(self, action: #selector(onClickOut(_:)), for: UIControlEvents.touchUpInside)
+        view.addSubview(outItem)
     }
     
     private func setupSwitch() {
