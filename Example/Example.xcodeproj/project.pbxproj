@@ -14,6 +14,8 @@
 		3EBE7ECF1F88CC4D00ED4470 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE7ECE1F88CC4D00ED4470 /* Window.swift */; };
 		3EC80BDD1F8A0B2C0000C812 /* JoUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC80BDC1F8A0B1E0000C812 /* JoUIKit.framework */; };
 		3EC80BDE1F8A0B2C0000C812 /* JoUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC80BDC1F8A0B1E0000C812 /* JoUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		605710462042A67F00F4949A /* SupportingExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605710452042A67F00F4949A /* SupportingExampleController.swift */; };
+		605710482042A9CC00F4949A /* SeparatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605710472042A9CC00F4949A /* SeparatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		3E0E24091F8690C400157355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EBE7ECE1F88CC4D00ED4470 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		3EC80BD71F8A0B1E0000C812 /* JoUIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JoUIKit.xcodeproj; path = ../JoUIKit.xcodeproj; sourceTree = "<group>"; };
+		605710452042A67F00F4949A /* SupportingExampleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingExampleController.swift; sourceTree = "<group>"; };
+		605710472042A9CC00F4949A /* SeparatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 		3E0E24021F8690C400157355 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				605710442042A66700F4949A /* Separator */,
+				605710432042A65200F4949A /* Supporting LoadView */,
 				3EBE7ECE1F88CC4D00ED4470 /* Window.swift */,
 				3E0E24071F8690C400157355 /* AppDelegate.swift */,
 				3E0E24031F8690C400157355 /* ViewController.swift */,
@@ -124,6 +130,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		605710432042A65200F4949A /* Supporting LoadView */ = {
+			isa = PBXGroup;
+			children = (
+				605710452042A67F00F4949A /* SupportingExampleController.swift */,
+			);
+			path = "Supporting LoadView";
+			sourceTree = "<group>";
+		};
+		605710442042A66700F4949A /* Separator */ = {
+			isa = PBXGroup;
+			children = (
+				605710472042A9CC00F4949A /* SeparatorViewController.swift */,
+			);
+			path = Separator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +239,8 @@
 				3E0E240E1F86916100157355 /* ViewController.swift in Sources */,
 				3E0E240F1F86916100157355 /* NavigationController.swift in Sources */,
 				3E0E240D1F86916100157355 /* AppDelegate.swift in Sources */,
+				605710462042A67F00F4949A /* SupportingExampleController.swift in Sources */,
+				605710482042A9CC00F4949A /* SeparatorViewController.swift in Sources */,
 				3EBE7ECF1F88CC4D00ED4470 /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
