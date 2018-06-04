@@ -141,9 +141,27 @@ private class JoViewSeparatorView: UIView {
     required init(position: JoViewSeparatorPosition, toView: UIView) {
         self.position = position
         super.init(frame: CGRect.zero)
+        toView.addSubview(self)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func jo_setupSubviews() {
+        super.jo_setupSubviews()
+        
+        backgroundColor = UIColor(red: 213 / 255.0, green: 213 / 255.0, blue: 213 / 255.0, alpha: 1)
+        translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    override func jo_makeSubviewsLayout() {
+        super.jo_makeSubviewsLayout()
+        
+        guard let toView = superview else { return }
         
         let thickness: NSLayoutAttribute = position.contains(.top) || position.contains(.bottom) ? .height : .width
-        toView.addSubview(self)
+        
         translatesAutoresizingMaskIntoConstraints = false
         topLayout = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: toView, attribute: .top, multiplier: 1, constant: 0)
         leadingLayout = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: toView, attribute: .leading, multiplier: 1, constant: 0)
@@ -151,11 +169,7 @@ private class JoViewSeparatorView: UIView {
         trailingLayout = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: toView, attribute: .trailing, multiplier: 1, constant: 0)
         thicknessItem = NSLayoutConstraint(item: self, attribute: thickness, relatedBy: .equal, toItem: nil, attribute: thickness, multiplier: 1, constant: 0)
         
-        backgroundColor = UIColor(red: 213 / 255.0, green: 213 / 255.0, blue: 213 / 255.0, alpha: 1)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        didSetCorner()
     }
     
     private func didSetCorner() {
@@ -185,11 +199,6 @@ private class JoViewSeparatorView: UIView {
             bottomLayout.isActive = true
             trailingLayout.isActive = true
         }
-    }
-    
-    override func jo_makeSubviewsLayout() {
-        super.jo_makeSubviewsLayout()
-        didSetCorner()
     }
 }
 

@@ -8,9 +8,11 @@
 
 extension JoUIKit where Base: UIViewController {
     
-    public func addChildViewController(_ childController: UIViewController, frame: CGRect? = nil) {
+    public func addChildViewController(_ childController: UIViewController, toView: UIView? = nil, frame: CGRect? = nil) {
         base.addChildViewController(childController)
-        base.view.addSubview(childController.view)
+        if let toView = toView {
+            toView.addSubview(childController.view)
+        }
         if let frame = frame {
             childController.view.frame = frame
         }

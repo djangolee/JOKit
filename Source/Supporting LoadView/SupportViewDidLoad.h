@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIViewController (_SupportLoad)
+@interface UIViewController (_JoSupportLoad)
+
+@property (nonatomic, readonly) BOOL jo_isuiinstalled;
 
 - (void)jo_viewWillInstallSubviews NS_REQUIRES_SUPER;
 - (void)jo_viewDidInstallSubviews NS_REQUIRES_SUPER;
@@ -20,24 +22,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface UIView (_SupportLoad)
+@interface UIView (_JoSupportLoad)
+
+@property (nonatomic, readonly) BOOL jo_isuiinstalled;
 
 - (void)jo_viewDidLoad NS_REQUIRES_SUPER;
 
-- (void)jo_viewWillAppear NS_REQUIRES_SUPER;
-- (void)jo_viewDidAppear NS_REQUIRES_SUPER;
-
-- (void)jo_viewWillDisappear NS_REQUIRES_SUPER;
-- (void)jo_viewDidDisappear NS_REQUIRES_SUPER;
-
 - (void)jo_viewWillInstallSubviews NS_REQUIRES_SUPER;
 - (void)jo_viewDidInstallSubviews NS_REQUIRES_SUPER;
+
 - (void)jo_setupSubviews NS_REQUIRES_SUPER;
 - (void)jo_makeSubviewsLayout NS_REQUIRES_SUPER;
 
 @end
 
-@interface CALayer (_SupportLoad)
+@interface CALayer (_JoSupportLoad)
+
+@property (nonatomic, readonly) BOOL jo_isuiinstalled;
 
 - (void)jo_layerDidLoad NS_REQUIRES_SUPER;
 

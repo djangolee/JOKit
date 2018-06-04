@@ -167,30 +167,6 @@ private class SupportingExampleView: UIView {
         (UIApplication.shared.delegate as! AppDelegate).addText(obj: self, text: "\(number): " + #function)
     }
     
-    override func jo_viewWillAppear() {
-        super.jo_viewWillAppear()
-        
-        (UIApplication.shared.delegate as! AppDelegate).addText(obj: self, text: "\(number): " + #function)
-    }
-    
-    override func jo_viewDidAppear() {
-        super.jo_viewDidAppear()
-        
-        (UIApplication.shared.delegate as! AppDelegate).addText(obj: self, text: "\(number): " + #function)
-    }
-    
-    override func jo_viewWillDisappear() {
-        super.jo_viewWillDisappear()
-        
-        (UIApplication.shared.delegate as! AppDelegate).addText(obj: self, text: "\(number): " + #function)
-    }
-    
-    override func jo_viewDidDisappear() {
-        super.jo_viewDidDisappear()
-        
-        (UIApplication.shared.delegate as! AppDelegate).addText(obj: self, text: "\(number): " + #function)
-    }
-    
     override func jo_viewWillInstallSubviews() {
         super.jo_viewWillInstallSubviews()
         
@@ -229,30 +205,6 @@ private class ExampleSubView: UIView {
     
     override func jo_viewDidLoad() {
         super.jo_viewDidLoad()
-        
-        (UIApplication.shared.delegate as! AppDelegate).addText(obj: self, text: "\(number): " + #function)
-    }
-    
-    override func jo_viewWillAppear() {
-        super.jo_viewWillAppear()
-        
-        (UIApplication.shared.delegate as! AppDelegate).addText(obj: self, text: "\(number): " + #function)
-    }
-    
-    override func jo_viewDidAppear() {
-        super.jo_viewDidAppear()
-        
-        (UIApplication.shared.delegate as! AppDelegate).addText(obj: self, text: "\(number): " + #function)
-    }
-    
-    override func jo_viewWillDisappear() {
-        super.jo_viewWillDisappear()
-        
-        (UIApplication.shared.delegate as! AppDelegate).addText(obj: self, text: "\(number): " + #function)
-    }
-    
-    override func jo_viewDidDisappear() {
-        super.jo_viewDidDisappear()
         
         (UIApplication.shared.delegate as! AppDelegate).addText(obj: self, text: "\(number): " + #function)
     }

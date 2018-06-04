@@ -11,7 +11,7 @@
 
 #pragma mark NSObject, about onceToken
 
-@interface NSObject(_SupportLoad)
+@interface NSObject(_JoSupportLoad)
 
 @property (nonatomic, strong, nullable) NSObject *_supportload_onceToken;
 
@@ -20,6 +20,7 @@
 @implementation NSObject(_SupportLoad)
 
 static char _supportload_associatedKey;
+static char _supportload_isuiinstalledKey;
 
 -(NSObject * __nullable)_supportload_onceToken {
     return objc_getAssociatedObject(self, &_supportload_associatedKey);
@@ -33,7 +34,13 @@ static char _supportload_associatedKey;
 
 #pragma mark UIViewController
 
-@implementation UIViewController (_SupportLoad)
+@interface UIViewController ()
+
+@property (nonatomic) BOOL jo_isuiinstalled;
+
+@end
+
+@implementation UIViewController (_JoSupportLoad)
 
 + (void)load {
     Method origin = class_getInstanceMethod(self, @selector(viewDidLoad));
@@ -41,29 +48,43 @@ static char _supportload_associatedKey;
     method_exchangeImplementations(origin, support);
 }
 
+- (BOOL)jo_isuiinstalled {
+    NSNumber *number = objc_getAssociatedObject(self, &_supportload_isuiinstalledKey);
+    return number.boolValue;
+}
+
+- (void)setJo_isuiinstalled:(BOOL)jo_isuiinstalled {
+    objc_setAssociatedObject(self, &_supportload_isuiinstalledKey, @(jo_isuiinstalled), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 // private
 
 -(void)_jo_supportLoadView {
     [self _jo_supportLoadView];
     if (self.isViewLoaded && !self._supportload_onceToken) {
-        self._supportload_onceToken = [NSObject new];
-        [self performSelectorOnMainThread:@selector(_jo_viewWillInstallSubviews) withObject:nil waitUntilDone:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self._supportload_onceToken = [NSObject new];
+            [self _jo_viewWillInstallSubviews];
+        });
     }
 }
 
 - (void)_jo_viewWillInstallSubviews {
     [self jo_viewWillInstallSubviews];
-    [self performSelectorOnMainThread:@selector(_jo_installSubviews) withObject:nil waitUntilDone:nil];
+    [self _jo_installSubviews];
 }
 
 - (void)_jo_installSubviews {
     [self jo_setupSubviews];
     [self jo_makeSubviewsLayout];
-    [self performSelectorOnMainThread:@selector(_jo_viewDidInstallSubviews) withObject:nil waitUntilDone:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self _jo_viewDidInstallSubviews];
+    });
 }
 
 - (void)_jo_viewDidInstallSubviews {
     [self jo_viewDidInstallSubviews];
+    self.jo_isuiinstalled = YES;
 }
 
 // public
@@ -78,14 +99,15 @@ static char _supportload_associatedKey;
 
 #pragma mark UIView
 
-@implementation UIView (_SupportLoad)
+@interface UIView ()
+
+@property (nonatomic) BOOL jo_isuiinstalled;
+
+@end
+
+@implementation UIView (_JoSupportLoad)
 
 + (void)load {
-    {
-        Method origin = class_getInstanceMethod(self, @selector(willMoveToWindow:));
-        Method support = class_getInstanceMethod(self, @selector(_jo_willMoveToWindow:));
-        method_exchangeImplementations(origin, support);
-    }
     {
         Method origin = class_getInstanceMethod(self, @selector(didMoveToWindow));
         Method support = class_getInstanceMethod(self, @selector(_jo_didMoveToWindow));
@@ -93,76 +115,56 @@ static char _supportload_associatedKey;
     }
 }
 
-// private
-
-- (void)_jo_willMoveToWindow:(UIWindow *)newWindow {
-    [self _jo_willMoveToWindow:newWindow];
-    
-    if (!self._supportload_onceToken) {
-        [self _jo_requiresviewDidLoad:newWindow];
-    }
-    if (!self._supportload_onceToken) return;
-    
-    newWindow ? [self _jo_viewWillAppear] : [self _jo_viewWillDisappear];
+- (BOOL)jo_isuiinstalled {
+    NSNumber *number = objc_getAssociatedObject(self, &_supportload_isuiinstalledKey);
+    return number.boolValue;
 }
+
+- (void)setJo_isuiinstalled:(BOOL)jo_isuiinstalled {
+    objc_setAssociatedObject(self, &_supportload_isuiinstalledKey, @(jo_isuiinstalled), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+// private
 
 - (void)_jo_didMoveToWindow {
     [self _jo_didMoveToWindow];
     
-    self.window ? [self _jo_viewDidAppear] : [self _jo_viewDidDisappear];
+    [self _jo_requiresviewDidLoad];
 }
 
-- (void)_jo_requiresviewDidLoad:(UIWindow *)newWindow {
-    if (newWindow && !self._supportload_onceToken) {
-        self._supportload_onceToken = [NSObject new];
+- (void)_jo_requiresviewDidLoad {
+    if (self.window && !self._supportload_onceToken) {
         [self jo_viewDidLoad];
-        [self performSelectorOnMainThread:@selector(_jo_viewWillInstallSubviews) withObject:nil waitUntilDone:nil];
+        self._supportload_onceToken = [NSObject new];
+        [self _jo_viewWillInstallSubviews];
     }
 }
 
 - (void)_jo_viewWillInstallSubviews {
     [self jo_viewWillInstallSubviews];
-    [self performSelectorOnMainThread:@selector(_jo_installSubviews) withObject:nil waitUntilDone:nil];
+    [self _jo_installSubviews];
 }
 
 - (void)_jo_installSubviews {
     [self jo_setupSubviews];
     [self jo_makeSubviewsLayout];
-    [self performSelectorOnMainThread:@selector(_jo_viewDidInstallSubviews) withObject:nil waitUntilDone:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self _jo_viewDidInstallSubviews];
+    });
 }
 
 - (void)_jo_viewDidInstallSubviews {
     [self jo_viewDidInstallSubviews];
-}
-
-- (void)_jo_viewWillAppear {
-    [self jo_viewWillAppear];
-}
-
-- (void)_jo_viewDidAppear {
-    [self jo_viewDidAppear];
-}
-
-- (void)_jo_viewWillDisappear {
-    [self jo_viewWillDisappear];
-}
-
-- (void)_jo_viewDidDisappear {
-    [self jo_viewDidDisappear];
+    self.jo_isuiinstalled = YES;
 }
 
 // public
 
 - (void)jo_viewDidLoad { }
 
-- (void)jo_viewWillAppear { }
-- (void)jo_viewDidAppear { }
-
-- (void)jo_viewWillDisappear { }
-- (void)jo_viewDidDisappear { }
-
 - (void)jo_viewWillInstallSubviews { }
 - (void)jo_viewDidInstallSubviews { }
+
 - (void)jo_setupSubviews { }
 - (void)jo_makeSubviewsLayout { }
 
@@ -170,7 +172,13 @@ static char _supportload_associatedKey;
 
 #pragma mark CALayer
 
-@implementation CALayer (_SupportLoad)
+@interface CALayer ()
+
+@property (nonatomic) BOOL jo_isuiinstalled;
+
+@end
+
+@implementation CALayer (_JoSupportLoad)
 
 + (void)load {
     Method origin = class_getInstanceMethod(self, @selector(layoutSublayers));
@@ -178,35 +186,47 @@ static char _supportload_associatedKey;
     method_exchangeImplementations(origin, support);
 }
 
+- (BOOL)jo_isuiinstalled {
+    NSNumber *number = objc_getAssociatedObject(self, &_supportload_isuiinstalledKey);
+    return number.boolValue;
+}
+
+- (void)setJo_isuiinstalled:(BOOL)jo_isuiinstalled {
+    objc_setAssociatedObject(self, &_supportload_isuiinstalledKey, @(jo_isuiinstalled), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 // private
 
 - (void)_jo_layoutSublayers {
     [self _jo_layoutSublayers];
     
-    if (self.superlayer && !self._supportload_onceToken) {
-        self._supportload_onceToken = [NSObject new];
-        [self performSelectorOnMainThread:@selector(_jo_requiresLayerDidLoad) withObject:nil waitUntilDone:nil];
-    }
+    [self _jo_requiresLayerDidLoad];
 }
 
 - (void)_jo_requiresLayerDidLoad {
-    [self jo_layerDidLoad];
-    [self performSelectorOnMainThread:@selector(_jo_layerWillInstallSublayers) withObject:nil waitUntilDone:nil];
+    if (self.superlayer && !self._supportload_onceToken) {
+        [self jo_layerDidLoad];
+        self._supportload_onceToken = [NSObject new];
+        [self _jo_layerWillInstallSublayers];
+    }
 }
 
 - (void)_jo_layerWillInstallSublayers {
     [self jo_layerWillInstallSublayers];
-    [self performSelectorOnMainThread:@selector(_jo_installSublayers) withObject:nil waitUntilDone:nil];
+    [self _jo_installSublayers];
 }
 
 - (void)_jo_installSublayers {
     [self jo_setupSublayers];
     [self jo_makeSublayersLayout];
-    [self performSelectorOnMainThread:@selector(_jo_layerDidInstallSublayers) withObject:nil waitUntilDone:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self _jo_layerDidInstallSublayers];
+    });
 }
 
 - (void)_jo_layerDidInstallSublayers {
     [self jo_layerDidInstallSublayers];
+    self.jo_isuiinstalled = YES;
 }
 
 // public
@@ -220,5 +240,3 @@ static char _supportload_associatedKey;
 - (void)jo_makeSublayersLayout { }
 
 @end
-
-
