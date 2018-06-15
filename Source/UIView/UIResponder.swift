@@ -8,7 +8,7 @@
 
 // Responder
 
-extension JoUIKit where Base: UIView {
+extension JoUIKit where Base: UIResponder {
     
     public var viewController: UIViewController? {
         get {

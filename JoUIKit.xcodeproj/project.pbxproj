@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		3EC80BCE1F8A0A8E0000C812 /* JoUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BCA1F8A0A460000C812 /* JoUIKit.swift */; };
 		3EC80BCF1F8A0AA30000C812 /* UIViewController+Adding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BC11F8A0A460000C812 /* UIViewController+Adding.swift */; };
-		3EC80BD01F8A0AA30000C812 /* UIView+Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BC21F8A0A460000C812 /* UIView+Responder.swift */; };
+		3EC80BD01F8A0AA30000C812 /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BC21F8A0A460000C812 /* UIResponder.swift */; };
 		3EC80BD11F8A0AA30000C812 /* DispatchQueue+Adding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BC41F8A0A460000C812 /* DispatchQueue+Adding.swift */; };
 		3EC80BD61F8A0AA30000C812 /* JoUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC80BC91F8A0A460000C812 /* JoUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EC80BE81F8A2E3D0000C812 /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BE71F8A2E3D0000C812 /* UITableView+Register.swift */; };
 		3EC80BEB1F8A31180000C812 /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC80BEA1F8A31180000C812 /* UICollectionView+Register.swift */; };
-		605710412040527800F4949A /* UIView+Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605710402040527800F4949A /* UIView+Separator.swift */; };
+		605710412040527800F4949A /* UIViewSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605710402040527800F4949A /* UIViewSeparator.swift */; };
 		60A0D3611FDF8B9A00C82DBF /* SupportViewDidLoad.h in Headers */ = {isa = PBXBuildFile; fileRef = 60A0D35F1FDF8B9A00C82DBF /* SupportViewDidLoad.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60A0D3621FDF8B9A00C82DBF /* SupportViewDidLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0D3601FDF8B9A00C82DBF /* SupportViewDidLoad.m */; };
 		60D9D2CC1FCC52FB000634A6 /* UIScreen+Adding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9D2CB1FCC52FB000634A6 /* UIScreen+Adding.swift */; };
@@ -23,14 +23,14 @@
 /* Begin PBXFileReference section */
 		3EC80BB41F8A0A0A0000C812 /* JoUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JoUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EC80BC11F8A0A460000C812 /* UIViewController+Adding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Adding.swift"; sourceTree = "<group>"; };
-		3EC80BC21F8A0A460000C812 /* UIView+Responder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Responder.swift"; sourceTree = "<group>"; };
+		3EC80BC21F8A0A460000C812 /* UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
 		3EC80BC41F8A0A460000C812 /* DispatchQueue+Adding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Adding.swift"; sourceTree = "<group>"; };
 		3EC80BC91F8A0A460000C812 /* JoUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoUIKit.h; sourceTree = "<group>"; };
 		3EC80BCA1F8A0A460000C812 /* JoUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoUIKit.swift; sourceTree = "<group>"; };
 		3EC80BCB1F8A0A460000C812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EC80BE71F8A2E3D0000C812 /* UITableView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
 		3EC80BEA1F8A31180000C812 /* UICollectionView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
-		605710402040527800F4949A /* UIView+Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Separator.swift"; sourceTree = "<group>"; };
+		605710402040527800F4949A /* UIViewSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewSeparator.swift; sourceTree = "<group>"; };
 		60A0D35F1FDF8B9A00C82DBF /* SupportViewDidLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupportViewDidLoad.h; sourceTree = "<group>"; };
 		60A0D3601FDF8B9A00C82DBF /* SupportViewDidLoad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupportViewDidLoad.m; sourceTree = "<group>"; };
 		60D9D2CB1FCC52FB000634A6 /* UIScreen+Adding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Adding.swift"; sourceTree = "<group>"; };
@@ -116,8 +116,8 @@
 		6057103C2040507E00F4949A /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				3EC80BC21F8A0A460000C812 /* UIView+Responder.swift */,
-				605710402040527800F4949A /* UIView+Separator.swift */,
+				3EC80BC21F8A0A460000C812 /* UIResponder.swift */,
+				605710402040527800F4949A /* UIViewSeparator.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				605710412040527800F4949A /* UIView+Separator.swift in Sources */,
+				605710412040527800F4949A /* UIViewSeparator.swift in Sources */,
 				3EC80BCF1F8A0AA30000C812 /* UIViewController+Adding.swift in Sources */,
 				3EC80BE81F8A2E3D0000C812 /* UITableView+Register.swift in Sources */,
 				3EC80BD11F8A0AA30000C812 /* DispatchQueue+Adding.swift in Sources */,
@@ -235,7 +235,7 @@
 				3EC80BEB1F8A31180000C812 /* UICollectionView+Register.swift in Sources */,
 				3EC80BCE1F8A0A8E0000C812 /* JoUIKit.swift in Sources */,
 				60A0D3621FDF8B9A00C82DBF /* SupportViewDidLoad.m in Sources */,
-				3EC80BD01F8A0AA30000C812 /* UIView+Responder.swift in Sources */,
+				3EC80BD01F8A0AA30000C812 /* UIResponder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
