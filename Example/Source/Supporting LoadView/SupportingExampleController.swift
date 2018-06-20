@@ -125,8 +125,8 @@ class SupportingExampleController: UIViewController {
         inItem.layer.borderColor = inItem.titleLabel?.textColor.cgColor;
         inItem.contentEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15);
         inItem.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        inItem.setTitle("In", for: .normal)
-        inItem.addTarget(self, action: #selector(onClickIn(_:)), for: UIControlEvents.touchUpInside)
+        inItem.setTitle("In", for: UIControl.State.normal)
+        inItem.addTarget(self, action: #selector(onClickIn(_:)), for: UIControl.Event.touchUpInside)
         view.addSubview(inItem)
     }
     
@@ -136,8 +136,8 @@ class SupportingExampleController: UIViewController {
         outItem.layer.borderColor = outItem.titleLabel?.textColor.cgColor;
         outItem.contentEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15);
         outItem.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        outItem.setTitle("Out", for: .normal)
-        outItem.addTarget(self, action: #selector(onClickOut(_:)), for: UIControlEvents.touchUpInside)
+        outItem.setTitle("Out", for: UIControl.State.normal)
+        outItem.addTarget(self, action: #selector(onClickOut(_:)), for: UIControl.Event.touchUpInside)
         view.addSubview(outItem)
     }
 }

@@ -129,7 +129,7 @@ extension SeparatorViewController {
     }
     
     private func setupBackgroundView() {
-        backgroundView.effect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        backgroundView.effect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         view.addSubview(backgroundView)
     }
     
@@ -172,22 +172,22 @@ extension SeparatorViewController {
     }
     
     private func setupResetItem() {
-        resetItem.setTitle("Reset", for: .normal)
+        resetItem.setTitle("Reset", for: UIControl.State.normal)
         resetItem.layer.borderWidth = 1
         resetItem.layer.borderColor = resetItem.titleLabel?.textColor.cgColor
         resetItem.layer.cornerRadius = 5
         resetItem.contentEdgeInsets = UIEdgeInsets(top: 15, left: 25, bottom: 15, right: 25)
-        resetItem.addTarget(self, action: #selector(onClickReset(_:)), for: .touchUpInside)
+        resetItem.addTarget(self, action: #selector(onClickReset(_:)), for: UIControl.Event.touchUpInside)
         view.addSubview(resetItem)
     }
     
     private func setupOutItem() {
-        outItem.setTitle("Out", for: .normal)
+        outItem.setTitle("Out", for: UIControl.State.normal)
         outItem.layer.cornerRadius = 3;
         outItem.layer.borderWidth = 1;
         outItem.layer.borderColor = outItem.titleLabel?.textColor.cgColor;
         outItem.contentEdgeInsets = UIEdgeInsets(top: 15, left: 25, bottom: 15, right: 25)
-        outItem.addTarget(self, action: #selector(onClickOut(_:)), for: UIControlEvents.touchUpInside)
+        outItem.addTarget(self, action: #selector(onClickOut(_:)), for: UIControl.Event.touchUpInside)
         view.addSubview(outItem)
     }
     
