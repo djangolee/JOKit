@@ -9,19 +9,19 @@
 extension JoUIKit where Base: UIViewController {
     
     public func addChildViewController(_ childController: UIViewController, toView: UIView? = nil, frame: CGRect? = nil) {
-        base.addChild(childController)
+        base.addChildViewController(childController)
         if let toView = toView {
             toView.addSubview(childController.view)
         }
         if let frame = frame {
             childController.view.frame = frame
         }
-        childController.didMove(toParent: base)
+        childController.didMove(toParentViewController: base)
     }
 
     public func removeFromParentViewController() {
-        base.willMove(toParent: nil)
+        base.willMove(toParentViewController: nil)
         base.view.removeFromSuperview()
-        base.removeFromParent()
+        base.removeFromParentViewController()
     }
 }

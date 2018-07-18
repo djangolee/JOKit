@@ -13,11 +13,11 @@ extension JoUIKit where Base: UICollectionView {
     }
     
     public func register(sectionHeader viewClass: UICollectionReusableView.Type, forSupplementaryViewOfKind elementKind: String) {
-        base.register(viewClass, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: NSStringFromClass(viewClass))
+        base.register(viewClass, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: NSStringFromClass(viewClass))
     }
     
     public func register(sectionFooter viewClass: UICollectionReusableView.Type, forSupplementaryViewOfKind elementKind: String) {
-        base.register(viewClass, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: NSStringFromClass(viewClass))
+        base.register(viewClass, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: NSStringFromClass(viewClass))
     }
 
     public func dequeueReusableCell(_ cellClass: UICollectionViewCell.Type, for indexPath: IndexPath) -> UICollectionViewCell {
@@ -25,10 +25,10 @@ extension JoUIKit where Base: UICollectionView {
     }
     
     public func dequeueReusableSupplementaryView(sectionHeader viewClass: UICollectionReusableView.Type, for indexPath: IndexPath) -> UICollectionReusableView {
-        return base.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: NSStringFromClass(viewClass), for: indexPath)
+        return base.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: NSStringFromClass(viewClass), for: indexPath)
     }
 
     public func dequeueReusableSupplementaryView(sectionFooter viewClass: UICollectionReusableView.Type, for indexPath: IndexPath) -> UICollectionReusableView {
-        return base.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: NSStringFromClass(viewClass), for: indexPath)
+        return base.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: NSStringFromClass(viewClass), for: indexPath)
     }
 }

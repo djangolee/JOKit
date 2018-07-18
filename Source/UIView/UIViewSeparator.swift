@@ -160,7 +160,7 @@ private class JoViewSeparatorView: UIView {
         
         guard let toView = superview else { return }
         
-        let thickness: NSLayoutConstraint.Attribute = position.contains(.top) || position.contains(.bottom) ? .height : .width
+        let thickness: NSLayoutAttribute = position.contains(.top) || position.contains(.bottom) ? .height : .width
         
         translatesAutoresizingMaskIntoConstraints = false
         topLayout = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: toView, attribute: .top, multiplier: 1, constant: 0)
